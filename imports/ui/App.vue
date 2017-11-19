@@ -1,7 +1,9 @@
 <template lang="pug">
-div#app
-  h1 {{msg}}
-  todo-list
+.panel#app
+  .panel-heading
+    h1.panel-title.text-center {{title}}
+  .panel-body
+    todo-list
 </template>
 
 <script>
@@ -11,7 +13,7 @@ export default {
   components: { TodoList },
   data() {
     return {
-      msg: "Hello world from Vue.js!"
+      title: "Meteor Vue Todo App"
     };
   }
 };
