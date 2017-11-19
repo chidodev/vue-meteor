@@ -5,8 +5,8 @@ import App from '/imports/ui/App.vue'
 
 Meteor.startup(() => {
   new Vue({
-    el: 'body',
-    replace: false,
+    el: '#title',
+    template: '<App/>',
     components: {
       App
     }
