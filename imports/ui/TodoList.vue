@@ -1,37 +1,34 @@
 <template lang="pug">
-todo-insert(@insert="insertTodo")
-todo-item(v-for="todo in todos", :todo="todo", :key="todo.id", @delete="deleteTodo")
+div
+  todo-insert(@insert="insertTodo")
+  todo-item(v-if="todos.length > 0" ,v-for="todo in todos", :todo="todo", :key="todo.id", @del="deleteTodo")
 </template>
 
 <script>
-import TodoItem from "./TodoItem";
-import TodoInsert from "./TodoInsert";
+import { Meteor } from "meteor/meteor";
+import TodoItem from "./TodoItem.vue";
+import TodoInsert from "./TodoInsert.vue";
+import { Todos } from "../api/todos.js";
 
 export default {
+  created() {
+    console.log("client");
+    Meteor.subscribe("todos");
+    //var todos = Meteor.call("todos.get");
+    console.log(Todos.find({}).fetch());
+  },
   components: {
     TodoItem,
     TodoInsert
   },
-  data() {
-    return {
-      todos: [
-        {
-          id: "2",
-          text: "hello2"
-        },
-        {
-          id: "1",
-          text: "hello"
-        }
-      ]
-    };
+  computed: {
+    todos() {
+      return Todos.find({});
+    }
   },
   methods: {
     insertTodo(text) {
-      this.todos.unshift({
-        id: this.todos.length + 1,
-        text: text
-      });
+      Meteor.call("todos.insert", text);
     },
     deleteTodo(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
