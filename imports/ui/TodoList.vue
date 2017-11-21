@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   todo-insert(@insert="insertTodo")
-  todo-item(v-if="todos.length > 0" ,v-for="todo in todos", :todo="todo", :key="todo.id", @del="deleteTodo")
+  todo-item(v-if="todos.length > 0" ,v-for="todo in todos", :todo="todo", key="todo.id", @del="deleteTodo")
 </template>
 
 <script>
@@ -32,7 +32,7 @@ export default {
   },
   meteor: {
     todos() {
-      return Todos.find({});
+      return Todos.find({}, { sort: { createAt: -1 } });
     }
   },
   components: {
@@ -44,8 +44,6 @@ export default {
       Meteor.call("addTodo", text);
     },
     deleteTodo(id) {
-      //this.todos = this.todos.filter(todo => todo.id !== id);
-      console.log("id: ", id);
       Meteor.call("removeTodo", id);
     }
   }
