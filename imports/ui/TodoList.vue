@@ -5,33 +5,48 @@ div
 </template>
 
 <script>
-import { Meteor } from "meteor/meteor";
 import TodoItem from "./TodoItem.vue";
 import TodoInsert from "./TodoInsert.vue";
-import { Todos } from "../api/todos.js";
-
+const test = {
+  meteor: {
+    subscribe: {
+      todos: []
+    },
+    todos() {
+      return Todos.find({});
+    }
+  }
+};
 export default {
+  //mixins: [test],
   created() {
     console.log("client");
     Meteor.subscribe("todos");
     //var todos = Meteor.call("todos.get");
     console.log(Todos.find({}).fetch());
   },
-  components: {
-    TodoItem,
-    TodoInsert
+  data() {
+    return {
+      todos: []
+    };
   },
-  computed: {
+  meteor: {
     todos() {
       return Todos.find({});
     }
   },
+  components: {
+    TodoItem,
+    TodoInsert
+  },
   methods: {
     insertTodo(text) {
-      Meteor.call("todos.insert", text);
+      Meteor.call("addTodo", text);
     },
     deleteTodo(id) {
-      this.todos = this.todos.filter(todo => todo.id !== id);
+      //this.todos = this.todos.filter(todo => todo.id !== id);
+      console.log("id: ", id);
+      Meteor.call("removeTodo", id);
     }
   }
 };
