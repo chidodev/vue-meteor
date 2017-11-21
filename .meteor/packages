@@ -24,5 +24,6 @@ akryum:vue-pug
 akryum:vue-less
 twbs:bootstrap
 mwc:synthesis-pug
-autopublish
 akryum:vue-blaze-template
+accounts-ui
+accounts-password
