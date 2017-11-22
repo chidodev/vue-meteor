@@ -9,7 +9,8 @@
     "bcrypt": "^1.0.3",
     "meteor-node-stubs": "^0.3.2",
     "vue": "^2.5.6",
-    "vue-meteor-tracker": "^1.0.3"
+    "vue-meteor-tracker": "^1.0.3",
+    "vue-router": "^2.0.0"
   },
   "devDependencies": {}
 }

@@ -5,9 +5,9 @@ import Vue from 'vue'
 import App from '/imports/ui/App.vue'
 
 Meteor.startup(() => {
-  console.log('from client: ', Todos.find({}).fetch())
 
   new Vue({
+    el: '#app',
     render: (h) => h(App)
-  }).$mount('app')
+  })
 })

@@ -2,6 +2,11 @@
 div
   todo-insert(@insert="insertTodo")
   todo-item(v-if="todos.length > 0" ,v-for="todo in todos", :todo="todo", key="todo.id", @del="deleteTodo", @check="setChecked")
+  .row
+    label.custom-control.custom-checkbox
+      input.custom-control-input(type="checkbox", v-model="hideCompleted")
+      span.custom-control-indicator
+      span.custom-control-description Hide completed Tasks
 </template>
 
 <script>
@@ -9,17 +14,23 @@ import TodoItem from "./TodoItem.vue";
 import TodoInsert from "./TodoInsert.vue";
 
 export default {
-  created() {
-    Meteor.subscribe("todos");
-  },
   data() {
     return {
-      todos: []
+      todos: [],
+      hideCompleted: false
     };
   },
   meteor: {
+    $subscribe: {
+      todos: []
+    },
     todos() {
-      return Todos.find({}, { sort: { createAt: -1 } });
+      // TODO: UPDATE todos when hideCompleted updates
+      const selector = {};
+      if (this.hideCompleted) {
+        selector.completed = { $ne: true };
+      }
+      return Todos.find(selector, { sort: { createAt: -1 } });
     }
   },
   components: {
