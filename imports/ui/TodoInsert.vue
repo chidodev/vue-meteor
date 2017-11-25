@@ -3,7 +3,7 @@
   .input-group.col-sm-offset-2.col-sm-8
     input.form-control(@keyup.enter="submit", v-model="text", placeholder="add new task...")
     span.input-group-btn
-      button.btn.btn-secondary(@click="submit") add
+      button.btn.btn-primary(@click="submit") add
 </template>
 
 <script>

@@ -22,7 +22,6 @@ akryum:vue-component
 session
 akryum:vue-pug
 akryum:vue-less
-twbs:bootstrap
 mwc:synthesis-pug
 akryum:vue-blaze-template
 accounts-ui

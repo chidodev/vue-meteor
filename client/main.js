@@ -1,12 +1,17 @@
 import { Meteor } from 'meteor/meteor'
 import '../imports/startup/accounts-config.js'
 import VueMeteorTracker from 'vue-meteor-tracker';
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import Vue from 'vue'
 
 import App from '/imports/ui/App.vue'
 
 Vue.use(VueMeteorTracker)
+Vue.use(BootstrapVue);
+
 Meteor.startup(() => {
 
   new Vue({

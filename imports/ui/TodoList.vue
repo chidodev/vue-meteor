@@ -1,17 +1,8 @@
 <template lang="pug">
 div
   todo-insert(@insert="insertTodo")
+  b-form-radio-group(buttons, v-model="filter", :options="filterOptions")
   todo-item(v-if="todos.length > 0" ,v-for="todo in todos", :todo="todo", key="todo.id", @del="deleteTodo", @check="setChecked")
-  .row
-    label.custom-control.custom-radio
-      input.custom-control-input(type="radio", name="all", value="all", v-model="filter")
-      span.custom-control-description(for="all") All
-    label.custom-control.custom-radio
-      input.custom-control-input(type="radio", name="todo", value="todo", v-model="filter")
-      span.custom-control-description(for="todo") Todo
-    label.custom-control.custom-radio
-      input.custom-control-input(type="radio", name="completed", value="completed", v-model="filter")
-      span.custom-control-description(for="completed") Completed
 </template>
 
 <script>
@@ -21,7 +12,12 @@ import TodoInsert from "./TodoInsert.vue";
 export default {
   data() {
     return {
-      filter: "all"
+      filter: "all",
+      filterOptions: [
+        { text: "All", value: "all" },
+        { text: "Todo", value: "todo" },
+        { text: "Completed", value: "completed" }
+      ]
     };
   },
   meteor: {
@@ -29,10 +25,12 @@ export default {
       todos: []
     },
     todos: {
+      // todos will update when params value change
       params() {
         return { filter: this.filter };
       },
       deep: true,
+      // update todos when receive change events
       update({ filter }) {
         let selector = {};
         if (filter === "todo") {
