@@ -1,8 +1,7 @@
 <template lang="pug">
 .row
-  label.col-sm-offset-2.col-sm-6.custom-control.custom-checkbox(:class="{completed: todo.completed}")
-    input.custom-control-input(type="checkbox", @change="setChecked($event)", v-model="todo.completed")
-    span.custom-control-description {{ todo.text }}
+  b-form-checkbox.col-sm-9(:class="{completed: todo.completed}", v-model="todo.completed", @change="setChecked($event)")
+    span {{todo.text}}
   button.btn.btn-sm.btn-secondary.col-sm-1(@click="togglePrivacy") private
   button.btn.btn-sm.btn-danger.col-sm-1(@click="del") delete
 </template>
@@ -18,8 +17,8 @@ export default {
     del() {
       this.$emit("del", this.todo._id);
     },
-    setChecked(event) {
-      this.$emit("check", this.todo._id, event.target.checked);
+    setChecked(value) {
+      this.$emit("check", this.todo._id, value);
     },
     togglePrivacy() {}
   }
@@ -28,12 +27,12 @@ export default {
 
 <style lang="less" scoped>
 .row {
-  margin-top: 20px;
+  margin-left: 10px;
 }
 input {
   margin-right: 5px;
 }
-label.completed {
+.completed {
   text-decoration: line-through;
 }
 </style>

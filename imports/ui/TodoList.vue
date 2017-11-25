@@ -1,7 +1,8 @@
 <template lang="pug">
-div
+.offset-sm-2.col-sm-8
   todo-insert(@insert="insertTodo")
-  b-form-radio-group(buttons, v-model="filter", :options="filterOptions")
+  .row
+    b-form-radio-group.offset-sm-4.col-sm-4(buttons, button-variant="outline-primary", v-model="filter", :options="filterOptions")
   todo-item(v-if="todos.length > 0" ,v-for="todo in todos", :todo="todo", key="todo.id", @del="deleteTodo", @check="setChecked")
 </template>
 

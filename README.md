@@ -8,5 +8,6 @@
 - [twbs:bootstrap Meteor](https://atmospherejs.com/twbs/bootstrap)
 - [meteor-vue2-example](https://github.com/Akryum/meteor-vue2-example)
 - [meteor-vue-tracker](https://github.com/meteor-vue/vue-meteor-tracker)
+- [boostrap-vue](https://bootstrap-vue.js.org/docs/)
 
 made with &#x2764; by [Steven](https://github.com/iamstevendao).
