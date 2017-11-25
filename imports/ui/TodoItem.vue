@@ -1,8 +1,7 @@
 <template lang="pug">
 .row
   label.col-sm-offset-2.col-sm-6.custom-control.custom-checkbox(:class="{completed: todo.completed}")
-    input.custom-control-input(type="checkbox", @change="setChecked($event)")
-    span.custom-control-indicator
+    input.custom-control-input(type="checkbox", @change="setChecked($event)", v-model="todo.completed")
     span.custom-control-description {{ todo.text }}
   button.btn.btn-sm.btn-secondary.col-sm-1(@click="togglePrivacy") private
   button.btn.btn-sm.btn-danger.col-sm-1(@click="del") delete
