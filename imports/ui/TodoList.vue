@@ -1,5 +1,5 @@
 <template lang="pug">
-.offset-sm-2.col-sm-8
+.col-sm-12
   todo-insert(@insert="insertTodo")
   .row
     b-form-radio-group.offset-sm-4.col-sm-4(buttons, button-variant="outline-primary", v-model="filter", :options="filterOptions")

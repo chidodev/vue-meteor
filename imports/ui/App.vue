@@ -3,7 +3,7 @@
   .panel-heading
     h1.panel-title.text-center {{title}}
   .panel-body
-    div.offset-sm-9(v-blaze="'loginButtons'")
+    .row: .col-sm-2(v-blaze="'loginButtons'")
     todo-list
 </template>
 
