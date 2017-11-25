@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       filter: "all",
-      subHandle: null
+      selector: {}
     };
   },
   created() {
@@ -30,12 +30,18 @@ export default {
   },
   meteor: {
     todos() {
+      console.log("---- inside computed");
       // TODO: UPDATE todos when hideCompleted updates
       // const selector = {};
       // if (this.hideCompleted) {
       //   selector.completed = { $ne: true };
       // }
-      return Todos.find({}, { sort: { createAt: -1 } });
+      return Todos.find(
+        {},
+        {
+          sort: { createAt: -1 }
+        }
+      );
     }
   },
   components: {
@@ -55,7 +61,25 @@ export default {
   },
   watch: {
     filter(val) {
-      this.$subscribe("todos", this.filter);
+      switch (val) {
+        case "all":
+          this.todos.forEach(element => {
+            element.showed = true;
+          });
+          console.log("todos: ", this.todos);
+          break;
+        case "todo":
+          this.todos.forEach(element => {
+            element.showed = !element.completed;
+          });
+          console.log("todo --todos: ", this.todos);
+          break;
+        case "completed":
+          this.todos.forEach(element => {
+            element.showed = element.completed;
+          });
+          break;
+      }
     }
   }
 };

@@ -27,3 +27,5 @@ mwc:synthesis-pug
 akryum:vue-blaze-template
 accounts-ui
 accounts-password
+peerlibrary:subscription-scope
+peerlibrary:subscription-data
