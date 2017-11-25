@@ -21,21 +21,28 @@ import TodoInsert from "./TodoInsert.vue";
 export default {
   data() {
     return {
-      filter: "all",
-      subHandle: null
+      filter: "all"
     };
   },
-  created() {
-    this.$subscribe("todos", this.filter);
-  },
   meteor: {
-    todos() {
-      // TODO: UPDATE todos when hideCompleted updates
-      // const selector = {};
-      // if (this.hideCompleted) {
-      //   selector.completed = { $ne: true };
-      // }
-      return Todos.find({}, { sort: { createAt: -1 } });
+    $subscribe: {
+      todos: []
+    },
+    todos: {
+      params() {
+        return { filter: this.filter };
+      },
+      deep: true,
+      update({ filter }) {
+        let selector = {};
+        if (filter === "todo") {
+          selector = { completed: { $ne: true } };
+        }
+        if (filter === "completed") {
+          selector = { completed: true };
+        }
+        return Todos.find(selector, { sort: { createAt: -1 } });
+      }
     }
   },
   components: {
@@ -51,11 +58,6 @@ export default {
     },
     setChecked(id, completed) {
       Meteor.call("checkTodo", id, completed);
-    }
-  },
-  watch: {
-    filter(val) {
-      this.$subscribe("todos", this.filter);
     }
   }
 };
