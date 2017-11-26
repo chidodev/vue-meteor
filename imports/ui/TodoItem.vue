@@ -2,7 +2,8 @@
 .row
   b-form-checkbox.col-sm-10(:class="{completed: todo.completed}", v-model="todo.completed", @change="setChecked($event)")
     span {{todo.text}}
-  button.btn.btn-sm.btn-secondary.col-sm-1(@click="togglePrivacy") private
+  button.btn.btn-sm.btn-secondary.col-sm-1(v-if="todo.private" @click="togglePrivacy") private
+  button.btn.btn-sm.btn-info.col-sm-1(v-else @click="togglePrivacy") public
   button.btn.btn-sm.btn-danger.col-sm-1(@click="del") delete
 </template>
 
@@ -20,7 +21,9 @@ export default {
     setChecked(value) {
       this.$emit("check", this.todo._id, value);
     },
-    togglePrivacy() {}
+    togglePrivacy() {
+      this.$emit("togglePrivacy", this.todo._id, this.todo.private || false);
+    }
   }
 };
 </script>

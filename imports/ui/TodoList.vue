@@ -3,7 +3,7 @@
   todo-insert(@insert="insertTodo")
   .row
     b-form-radio-group.offset-sm-4.col-sm-4(buttons, button-variant="outline-primary", v-model="filter", :options="filterOptions")
-  todo-item(v-if="todos.length > 0" ,v-for="todo in todos", :todo="todo", key="todo.id", @del="deleteTodo", @check="setChecked")
+  todo-item(v-if="todos.length > 0" ,v-for="todo in todos", :todo="todo", key="todo.id", @del="deleteTodo", @check="setChecked", @togglePrivacy="togglePrivacy")
 </template>
 
 <script>
@@ -57,6 +57,9 @@ export default {
     },
     setChecked(id, completed) {
       Meteor.call("checkTodo", id, completed);
+    },
+    togglePrivacy(id, private) {
+      Meteor.call("togglePrivacy", id, private);
     }
   }
 };
