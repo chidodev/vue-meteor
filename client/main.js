@@ -12,8 +12,21 @@ import App from '/imports/ui/App.vue'
 Vue.use(VueMeteorTracker)
 Vue.use(BootstrapVue);
 
-Meteor.startup(() => {
+var oldUserId = undefined;
 
+Meteor.autorun(function () {
+  var newUserId = Meteor.userId();
+  if (oldUserId === null && newUserId) {
+    console.log('The user logged in');
+    document.location.reload(false);
+  } else if (newUserId === null && oldUserId) {
+    console.log('The user logged out');
+    document.location.reload(false);
+  }
+  oldUserId = Meteor.userId();
+});
+
+Meteor.startup(() => {
   new Vue({
     el: '#app',
     render: (h) => h(App)

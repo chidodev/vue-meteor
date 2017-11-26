@@ -1,10 +1,12 @@
 <template lang="pug">
 .row
-  b-form-checkbox.col-sm-10(:class="{completed: todo.completed}", v-model="todo.completed", @change="setChecked($event)")
+  b-form-checkbox.col-sm-8(:class="{completed: todo.completed}", v-model="todo.completed", @change="setChecked($event)")
     span {{todo.text}}
-  button.btn.btn-sm.btn-secondary.col-sm-1(v-if="todo.private" @click="togglePrivacy") private
-  button.btn.btn-sm.btn-info.col-sm-1(v-else @click="togglePrivacy") public
-  button.btn.btn-sm.btn-danger.col-sm-1(@click="del") delete
+    b-badge.badge-username(v-if="todo.username", variant="secondary") {{todo.username}} 
+  .col-sm-2
+    b-button(v-if="me && todo.username===me" :pressed.sync="todo.private" variant="outline-secondary" @click="togglePrivacy") private
+  .col-sm-2
+    b-button(variant="danger" @click="del") delete
 </template>
 
 <script>
@@ -12,6 +14,12 @@ export default {
   props: {
     todo: {
       type: Object
+    }
+  },
+  computed: {
+    me() {
+      if (!Meteor.user()) return null;
+      return Meteor.user().username;
     }
   },
   methods: {
@@ -32,9 +40,11 @@ export default {
 label {
   margin-right: 0;
 }
-// input {
-//   margin-right: 5px;
-// }
+.badge-username {
+  position: absolute;
+  margin-top: 10px;
+  right: 0;
+}
 .completed {
   text-decoration: line-through;
 }
