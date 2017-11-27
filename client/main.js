@@ -28,7 +28,8 @@ Meteor.autorun(function () {
 
 Meteor.startup(() => {
   new Vue({
-    el: '#app',
+    el: 'body',
+    replace: true,
     render: (h) => h(App)
   })
 })

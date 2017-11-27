@@ -1,10 +1,14 @@
 <template lang="pug">
-.panel#app
-  .panel-heading
-    h1.panel-title.text-center {{title}}
-  .panel-body
-    .row: .col-sm-2(v-blaze="'loginButtons'")
-    todo-list
+body
+  include ../includes/header
+  .container
+    .panel#app
+      .panel-heading
+        h1.panel-title.text-center {{title}}
+      .panel-body
+        .row: .col-sm-2(v-blaze="'loginButtons'")
+        todo-list
+  include ../includes/footer
 </template>
 
 <script>
@@ -21,5 +25,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.container {
+  margin-top: 30px;
+}
 </style>

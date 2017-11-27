@@ -23,6 +23,6 @@ session
 akryum:vue-pug
 akryum:vue-less
 mwc:synthesis-pug
-akryum:vue-blaze-template
 accounts-ui
 accounts-password
+akryum:vue-blaze-template
