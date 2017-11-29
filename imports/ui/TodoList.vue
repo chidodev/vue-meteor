@@ -4,7 +4,7 @@
   .row.radio-options: b-form-radio-group(buttons button-variant="outline-primary" v-model="filter" :options="filterOptions")
   .col-sm-12(v-if="todos.length > 0")
     todo-item(v-for="todo in todos" :todo="todo" key="todo.id" @del="deleteTodo" @check="setChecked", @togglePrivacy="togglePrivacy")
-  .col-sm-12(v-else): h2#todo-status Yay! No todos left!
+  .col-sm-12(v-else): h2#todo-status(v-html="filterOptions.find(ele => ele.value === filter).no")
 </template>
 
 <script>
@@ -16,9 +16,21 @@ export default {
     return {
       filter: "all",
       filterOptions: [
-        { text: "All", value: "all" },
-        { text: "Todo", value: "todo" },
-        { text: "Completed", value: "completed" }
+        {
+          text: "All",
+          value: "all",
+          no: "You have no todos &#x1F62A;"
+        },
+        {
+          text: "Todo",
+          value: "todo",
+          no: "Yay! No todos left &#x1F60E;"
+        },
+        {
+          text: "Completed",
+          value: "completed",
+          no: "No todos completed &#x2639;"
+        }
       ]
     };
   },
