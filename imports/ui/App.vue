@@ -28,4 +28,12 @@ export default {
 .container {
   margin-top: 30px;
 }
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: right;
+  padding: 1em;
+}
 </style>

@@ -1,9 +1,10 @@
 <template lang="pug">
 .col-sm-12
   todo-insert(@insert="insertTodo")
-  .row
-    b-form-radio-group.offset-sm-4.col-sm-4(buttons, button-variant="outline-primary", v-model="filter", :options="filterOptions")
-  todo-item(v-if="todos.length > 0" ,v-for="todo in todos", :todo="todo", key="todo.id", @del="deleteTodo", @check="setChecked", @togglePrivacy="togglePrivacy")
+  .row.radio-options: b-form-radio-group(buttons button-variant="outline-primary" v-model="filter" :options="filterOptions")
+  .col-sm-12(v-if="todos.length > 0")
+    todo-item(v-for="todo in todos" :todo="todo" key="todo.id" @del="deleteTodo" @check="setChecked", @togglePrivacy="togglePrivacy")
+  .col-sm-12(v-else): h2#todo-status Yay! No todos left!
 </template>
 
 <script>
@@ -64,4 +65,16 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.radio-options * {
+  margin: 0 auto;
+}
+#todo-status {
+  text-align: center;
+  color: grey;
+  margin-top: 200px;
+  font-weight: 100;
+}
+</style>
 
