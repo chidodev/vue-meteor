@@ -10,6 +10,7 @@
 <script>
 import TodoItem from "./TodoItem.vue";
 import TodoInsert from "./TodoInsert.vue";
+import { Todos } from "../../lib/collections.js";
 
 export default {
   data() {

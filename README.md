@@ -9,6 +9,7 @@
 - ~~Login Button~~
 - Auto update the visibility of private buttons when user login/logout (currently use force to refresh the page)
 - Test with Mocha
+- Apollo
 - Router
 - Vuex
 
