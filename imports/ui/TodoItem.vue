@@ -4,21 +4,26 @@
     span {{todo.text}}
     b-badge.badge-username(v-if="todo.username", variant="secondary") {{todo.username}} 
   .col-sm-4.text-right
-    b-button(v-if="me && todo.username===me" :pressed.sync="todo.private" variant="outline-secondary" @click="togglePrivacy") private
+    b-button(v-if="mex && todo.username===mex" :pressed.sync="todo.private" variant="outline-secondary" @click="togglePrivacy") private
     b-button(variant="danger" @click="del") delete
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      me: ""
+    };
+  },
+  computed: {
+    mex() {
+      console.log("me: ", this.me);
+      return this.me;
+    }
+  },
   props: {
     todo: {
       type: Object
-    }
-  },
-  computed: {
-    me() {
-      if (!Meteor.user()) return null;
-      return Meteor.user().username;
     }
   },
   methods: {

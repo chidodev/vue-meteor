@@ -7,8 +7,8 @@
 - ~~Subscribe~~
 - ~~Tracker~~
 - ~~Login Button~~
-- Auto update the visibility of private buttons when user login/logout (currently use force to refresh the page)
-- Test with Mocha
+- *Auto update the visibility of private buttons when user login/logout (currently use force to refresh the page)*
+- *Test with Mocha (done some tests on the server)*
 - Apollo
 - Router
 - Vuex
