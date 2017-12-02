@@ -1,25 +1,28 @@
 <template lang="pug">
 .row
-  b-form-checkbox.col-sm-8(:class="{completed: todo.completed}", v-model="todo.completed", @change="setChecked($event)")
+  b-form-checkbox.col-sm-8(:class="{completed: todo.completed}"
+                          v-model="todo.completed"
+                          @change="setChecked($event)")
     span {{todo.text}}
-    b-badge.badge-username(v-if="todo.username", variant="secondary") {{todo.username}} 
+    b-badge.badge-username(v-if="todo.username"
+                          variant="secondary") {{todo.username}} 
   .col-sm-4.text-right
-    b-button(v-if="mex && todo.username===mex" :pressed.sync="todo.private" variant="outline-secondary" @click="togglePrivacy") private
-    b-button(variant="danger" @click="del") delete
+    b-button(v-if="me && todo.username===me" 
+            :pressed.sync="todo.private" 
+            variant="outline-secondary" 
+            @click="togglePrivacy") private
+    b-button(variant="danger" 
+            @click="del") delete
 </template>
 
 <script>
+import { mapState } from 'vuex-alt';
+
 export default {
-  data() {
-    return {
-      me: ""
-    };
-  },
   computed: {
-    mex() {
-      console.log("me: ", this.me);
-      return this.me;
-    }
+    ...mapState({
+      me: (state) => state.accounts.user,
+    })
   },
   props: {
     todo: {
