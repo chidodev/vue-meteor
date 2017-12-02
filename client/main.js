@@ -18,30 +18,30 @@ Vue.use(BootstrapVue);
 Vue.use(Vuex);
 
 const store = createStore();
-
+console.log("---store: ", store);
 Vue.use(VuexAltPlugin, { store });
 
 var oldUserId = undefined;
-
-Meteor.autorun(function () {
-  var newUserId = Meteor.userId();
-  if (oldUserId === null && newUserId) {
-    console.log('The user logged in');
-    // todoItem.me = Meteor.user().username;
-    this.$store.state.accounts.user = Meteor.user().username;
-  } else if (newUserId === null && oldUserId) {
-    console.log('The user logged out');
-
-    this.$store.state.accounts.user = null;
-  }
-  oldUserId = Meteor.userId();
-});
-
+var vue;
 Meteor.startup(() => {
-  new Vue({
+  vue = new Vue({
     el: 'body',
     replace: true,
     render: (h) => h(App),
     store,
   })
 })
+
+Meteor.autorun(function () {
+  var newUserId = Meteor.userId();
+  if (oldUserId === null && newUserId) {
+    console.log('The user logged in');
+    
+    vue.$store.state.accounts.user = Meteor.user().username;
+  } else if (newUserId === null && oldUserId) {
+    console.log('The user logged out');
+
+    vue.$store.state.accounts.user = null;
+  }
+  oldUserId = Meteor.userId();
+});

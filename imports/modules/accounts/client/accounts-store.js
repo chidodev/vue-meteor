@@ -5,10 +5,11 @@ import { Store } from 'vuex';
 const state = {
   user: null,
 }
-
+const getters = {}
 const moduleAccount = {
   namespaced: true,
   state,
+  getters,
 };
 
 const plugins = [];
@@ -16,7 +17,7 @@ const plugins = [];
 const createStore = () => {
   return new Store({
     plugins,
-    module: {
+    modules: {
       accounts: moduleAccount,
     }
   });
