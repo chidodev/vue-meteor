@@ -1,6 +1,6 @@
 <template lang="pug">
 body
-  include ../includes/header
+  include ./includes/header
   .container
     .panel#app
       .panel-heading
@@ -8,7 +8,7 @@ body
       .panel-body
         .row: .col-sm-2(v-blaze="'loginButtons'")
         todo-list
-  include ../includes/footer
+  include ./includes/footer
 </template>
 
 <script>

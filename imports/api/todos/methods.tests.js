@@ -1,6 +1,6 @@
 import { Random } from 'meteor/random'
 import { assert } from 'meteor/practicalmeteor:chai'
-import { Todos } from './collections.js'
+import { Todos } from './todos.js'
 import './methods.js'
 
 if (Meteor.isServer) {

@@ -10,6 +10,7 @@
 - *Auto update the visibility of private buttons when user login/logout (currently use force to refresh the page)*
 - *Test with Mocha (done some tests on the server)*
 - Apollo
+- GraphQL
 - Router
 - Vuex
 
@@ -22,5 +23,6 @@
 - [meteor-vue2-example](https://github.com/Akryum/meteor-vue2-example)
 - [meteor-vue-tracker](https://github.com/meteor-vue/vue-meteor-tracker)
 - [boostrap-vue](https://bootstrap-vue.js.org/docs/)
+- [file structure](https://guide.meteor.com/structure.html)
 
 made with &#x2764; by [Steven](https://github.com/iamstevendao).

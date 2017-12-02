@@ -1,5 +1,5 @@
 import { check } from 'meteor/check'
-import { Todos } from './collections.js'
+import { Todos } from './todos.js'
 
 Meteor.methods({
   addTodo (text) {
