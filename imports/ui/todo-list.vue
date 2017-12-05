@@ -14,8 +14,15 @@ import TodoInsert from "./todo-insert.vue";
 import { Todos } from "../api/todos/todos.js";
 
 export default {
+  created() {
+    let subHandle = this.$subscribe('todos');
+    Meteor.autorun(() => {
+      this.ready = subHandle.ready()
+    })
+  },
   data() {
     return {
+      ready: null,
       filter: "all",
       filterOptions: [
         {
@@ -36,27 +43,21 @@ export default {
       ]
     };
   },
-  meteor: {
-    $subscribe: {
-      todos: []
-    },
-    todos: {
-      // todos will update when params value change
-      params() {
-        return { filter: this.filter };
-      },
-      deep: true,
-      // update todos when receive change events
-      update({ filter }) {
-        let selector = {};
-        if (filter === "todo") {
-          selector = { completed: { $ne: true } };
-        }
-        if (filter === "completed") {
-          selector = { completed: true };
-        }
-        return Todos.find(selector, { sort: { createAt: -1 } });
+  computed: {
+    selector() {
+      console.log('---running');
+      switch (this.filter) {
+        case "all":
+          return {};
+        case "todo":
+          return { completed: { $ne: true } };
+        case "completed":
+          return { completed: true };
       }
+    },
+    todos() {
+      if (!this.ready) return [];
+      return Todos.find(this.selector, { sort: { createAt: -1 } }).fetch();
     }
   },
   components: {

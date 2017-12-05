@@ -19,9 +19,6 @@
 import { mapState } from 'vuex-alt';
 
 export default {
-  created() {
-    console.log('**me: ', this.me);
-  },
   computed: {
     ...mapState({
       me: (state) => state.accounts.user,
