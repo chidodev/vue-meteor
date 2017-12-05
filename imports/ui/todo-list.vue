@@ -51,7 +51,7 @@ export default {
       params() {
         return { selector: this.selector }
       },
-      deep: true,
+      //deep: true, // TODO: find this out
       update({ selector }) {
         return Todos.find(selector, { sort: { createAt: - 1 } })
       }
