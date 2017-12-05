@@ -12,7 +12,7 @@ body
 </template>
 
 <script>
-import TodoList from "./TodoList.vue";
+import TodoList from "./todo-list.vue";
 
 export default {
   components: { TodoList },
@@ -24,7 +24,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style scoped>
 .container {
   margin-top: 30px;
 }

@@ -8,8 +8,9 @@
 </template>
 
 <script>
-import TodoItem from "./TodoItem.vue";
-import TodoInsert from "./TodoInsert.vue";
+import { Meteor } from 'meteor/meteor'
+import TodoItem from "./todo-item.vue";
+import TodoInsert from "./todo-insert.vue";
 import { Todos } from "../api/todos/todos.js";
 
 export default {

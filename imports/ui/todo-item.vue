@@ -7,7 +7,7 @@
     b-badge.badge-username(v-if="todo.username"
                           variant="secondary") {{todo.username}} 
   .col-sm-4.text-right
-    b-button(v-if="me && todo.username===me" 
+    b-button(v-if="me && todo.owner===me" 
             :pressed.sync="todo.private" 
             variant="outline-secondary" 
             @click="togglePrivacy") private
@@ -20,7 +20,7 @@ import { mapState } from 'vuex-alt';
 
 export default {
   created() {
-    console.log(this.$store.state)
+    console.log('**me: ', this.me);
   },
   computed: {
     ...mapState({
@@ -46,7 +46,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style scoped>
 label {
   margin-right: 0;
 }
