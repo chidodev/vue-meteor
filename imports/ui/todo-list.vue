@@ -14,15 +14,15 @@ import TodoInsert from "./todo-insert.vue";
 import { Todos } from "../api/todos/todos.js";
 
 export default {
-  created() {
-    let subHandle = this.$subscribe('todos');
-    Meteor.autorun(() => {
-      this.ready = subHandle.ready()
-    })
-  },
+  // created() {
+  //   let subHandle = this.$subscribe('todos');
+  //   Meteor.autorun(() => {
+  //     this.ready = subHandle.ready()
+  //   })
+  // },
   data() {
     return {
-      ready: null,
+      // ready: null,
       filter: "all",
       filterOptions: [
         {
@@ -43,9 +43,22 @@ export default {
       ]
     };
   },
+  meteor: {
+    $subscribe: {
+      "todos": []
+    },
+    todos: {
+      params() {
+        return { selector: this.selector }
+      },
+      deep: true,
+      update({ selector }) {
+        return Todos.find(selector, { sort: { createAt: - 1 } })
+      }
+    }
+  },
   computed: {
     selector() {
-      console.log('---running');
       switch (this.filter) {
         case "all":
           return {};
@@ -54,10 +67,6 @@ export default {
         case "completed":
           return { completed: true };
       }
-    },
-    todos() {
-      if (!this.ready) return [];
-      return Todos.find(this.selector, { sort: { createAt: -1 } }).fetch();
     }
   },
   components: {
