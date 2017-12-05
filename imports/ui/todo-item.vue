@@ -21,7 +21,7 @@ import { mapState } from 'vuex-alt';
 export default {
   computed: {
     ...mapState({
-      me: (state) => state.accounts.user,
+      me: (state) => state.accounts.userId,
     })
   },
   props: {

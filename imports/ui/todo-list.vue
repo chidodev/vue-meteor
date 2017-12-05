@@ -1,9 +1,17 @@
 <template lang="pug">
 .col-sm-12
   todo-insert(@insert="insertTodo")
-  .row.radio-options: b-form-radio-group(buttons button-variant="outline-primary" v-model="filter" :options="filterOptions")
+  .row.radio-options: b-form-radio-group(buttons 
+                                        button-variant="outline-primary" 
+                                        v-model="filter" 
+                                        :options="filterOptions")
   .col-sm-12(v-if="todos.length > 0")
-    todo-item(v-for="todo in todos" :todo="todo" key="todo.id" @del="deleteTodo" @check="setChecked", @togglePrivacy="togglePrivacy")
+    todo-item(v-for="todo in todos" 
+              :todo="todo" 
+              key="todo.id" 
+              @del="deleteTodo" 
+              @check="setChecked"
+              @togglePrivacy="togglePrivacy")
   .col-sm-12(v-else): h2#todo-status(v-html="filterOptions.find(ele => ele.value === filter).no")
 </template>
 
@@ -14,12 +22,6 @@ import TodoInsert from "./todo-insert.vue";
 import { Todos } from "../api/todos/todos.js";
 
 export default {
-  // created() {
-  //   let subHandle = this.$subscribe('todos');
-  //   Meteor.autorun(() => {
-  //     this.ready = subHandle.ready()
-  //   })
-  // },
   data() {
     return {
       // ready: null,
@@ -93,12 +95,6 @@ export default {
 <style scoped>
 .radio-options * {
   margin: 0 auto;
-}
-#todo-status {
-  text-align: center;
-  color: grey;
-  margin-top: 200px;
-  font-weight: 100;
 }
 </style>
 

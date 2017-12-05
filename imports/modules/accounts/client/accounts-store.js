@@ -3,7 +3,7 @@ import { Account } from 'meteor/accounts-base'
 import { Store } from 'vuex';
 
 const state = {
-  user: null,
+  userId: null,
 }
 const getters = {}
 const moduleAccount = {

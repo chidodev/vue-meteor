@@ -27,12 +27,9 @@ export default {
 <style scoped>
 .container {
   margin-top: 30px;
+  height: 80%;
 }
 footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
   text-align: right;
   padding: 1em;
 }

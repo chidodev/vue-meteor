@@ -32,23 +32,19 @@ Meteor.startup(() => {
     store,
   });
   created = true;
-  vue.$store.state.accounts.user = Meteor.userId();
+  vue.$store.state.accounts.userId = Meteor.userId();
 })
 
 Meteor.autorun(function () {
-  //console.log('username: ', this.user().username)
   if (!created)
     return;
   var newUserId = Meteor.userId();
-  console.log('--- autorun: ', newUserId, ' ', oldUserId)
   if (!oldUserId && newUserId) {
-    console.log('The user logged in');
 
-    vue.$store.state.accounts.user = Meteor.userId();
+    vue.$store.state.accounts.userId = Meteor.userId();
   } else if (!newUserId && oldUserId) {
-    console.log('The user logged out');
 
-    vue.$store.state.accounts.user = null;
+    vue.$store.state.accounts.userId = null;
   }
   oldUserId = Meteor.userId();
 });
