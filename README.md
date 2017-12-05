@@ -4,14 +4,15 @@
 - ~~Bootstrap~~
 - ~~Pug~~
 - ~~Vue files~~
-- ~~Subscription~~ (Need to use Meteor.autorun to know when the Subcription is ready ?!) 
+- ~~Subscription~~
 - ~~Tracker~~ 
 - ~~Login Button~~ (Use loginbuttons of Blaze template)
 - ~~Auto update the visibility of private buttons when user login/logout~~ (Use Vuex)
-- *Test with Mocha (done some tests on the server)*
+- *Test with Mocha (done some tests on the server...)*
 - Apollo
 - GraphQL
 - Router
+- Hand-made Login Form
 
 ## Useful Links:
 - [vue-meteor](https://github.com/meteor-vue/vue-meteor)

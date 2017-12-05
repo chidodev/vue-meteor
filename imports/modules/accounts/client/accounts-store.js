@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor'
-import { Account } from 'meteor/accounts-base'
 import { Store } from 'vuex';
 
 const state = {
