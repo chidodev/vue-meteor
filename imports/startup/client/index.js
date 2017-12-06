@@ -1,59 +1,53 @@
-import '../accounts-config.js';
 import { Meteor } from 'meteor/meteor';
 import VueMeteorTracker from 'vue-meteor-tracker';
-import BootstrapVue from 'bootstrap-vue';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
-import { createStore } from '/imports/modules/accounts/client/accounts-store';
-import router from '/imports/modules/router/router.js';
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import { VuexAltPlugin } from 'vuex-alt';
 import { sync } from 'vuex-router-sync';
 
+import BootstrapVue from 'bootstrap-vue';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+
+// local files
 import App from '/imports/ui/app.vue'
-
-var oldUserId = undefined;
-var vue;
-var created = false;
-
+import '../accounts-config.js';
+import store from '/imports/modules/store';
+import router from '/imports/router/router';
 
 Vue.use(VueMeteorTracker)
 Vue.use(BootstrapVue);
 Vue.use(Vuex);
 Vue.use(VueRouter);
-
-const store = createStore();
-
 Vue.use(VuexAltPlugin, { store });
-console.log('--- router: ', router);
+
 sync(store, router);
 
+// need a global variable to use in autorun
+var vue;
 Meteor.startup(() => {
   vue = new Vue({
     replace: true,
     render: (h) => h(App),
     store,
     router,
-  }).$mount('body');
+  })
   if (process.env.NODE_ENV !== 'test') {
-    // vue.$mount('body');
+    vue.$mount('body');
   }
-  created = true;
+  // initialize userId state
   vue.$store.state.accounts.userId = Meteor.userId();
 })
 
-Meteor.autorun(function () {
-  if (!created)
-    return;
-  var newUserId = Meteor.userId();
-  if (!oldUserId && newUserId) {
+Meteor.autorun(() => {
 
-    vue.$store.state.accounts.userId = Meteor.userId();
-  } else if (!newUserId && oldUserId) {
+  // place this one first to let Meteor update whenever userId change
+  let userId = Meteor.userId();
 
-    vue.$store.state.accounts.userId = null;
-  }
-  oldUserId = Meteor.userId();
+  // if vue hasn't started up, return null
+  if (!vue) return;
+
+  // otherwise setup state
+  vue.$store.state.accounts.userId = userId;
 });
