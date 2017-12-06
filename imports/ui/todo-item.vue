@@ -1,15 +1,15 @@
 <template lang="pug">
 .row
-  b-form-checkbox.col-sm-8(:class="{completed: todo.completed}"
-                          v-model="todo.completed"
+  b-form-checkbox.col-sm-8(v-model="todo.completed"
+                          :class="{completed: todo.completed}"
                           @change="setChecked($event)")
     span {{todo.text}}
     b-badge.badge-username(v-if="todo.username"
                           variant="secondary") {{todo.username}} 
   .col-sm-4.text-right
     b-button(v-if="me && todo.owner===me" 
-            :pressed.sync="todo.private" 
             variant="outline-secondary" 
+            :pressed.sync="todo.private" 
             @click="togglePrivacy") private
     b-button(variant="danger" 
             @click="del") delete

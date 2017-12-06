@@ -7,12 +7,13 @@
                                         :options="filterOptions")
   .col-sm-12(v-if="todos.length > 0")
     todo-item(v-for="todo in todos" 
-              :todo="todo" 
               key="todo.id" 
+              :todo="todo" 
               @del="deleteTodo" 
               @check="setChecked"
               @togglePrivacy="togglePrivacy")
-  .col-sm-12(v-else): h2#todo-status(v-html="filterOptions.find(ele => ele.value === filter).no")
+  .col-sm-12(v-else)
+    h2#todo-status(v-html="filterOptions.find(ele => ele.value === filter).no")
 </template>
 
 <script>
