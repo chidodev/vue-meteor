@@ -5,14 +5,14 @@
                                         button-variant="outline-primary" 
                                         v-model="filter" 
                                         :options="filterOptions")
-  .col-sm-12(v-if="todos.length > 0")
+  .col-sm-12.todo-list(v-if="todos.length > 0")
     todo-item(v-for="todo in todos" 
               key="todo.id" 
               :todo="todo" 
               @del="deleteTodo" 
               @check="setChecked"
               @togglePrivacy="togglePrivacy")
-  .col-sm-12(v-else)
+  .col-sm-12.todo-list(v-else)
     h2#todo-status(v-html="filterOptions.find(ele => ele.value === filter).no")
 </template>
 
@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       // ready: null,
-      filter: "all",
+      filter: "todo",
       filterOptions: [
         {
           text: "All",
@@ -96,6 +96,15 @@ export default {
 <style scoped>
 .radio-options * {
   margin: 0 auto;
+}
+.todo-list {
+  min-height: 400px;
+}
+.todo-list #todo-status {
+  text-align: center;
+  color: grey;
+  padding: 200px;
+  font-weight: 100;
 }
 </style>
 
