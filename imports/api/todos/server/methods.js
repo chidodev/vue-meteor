@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor'
 import { check } from 'meteor/check'
-import { Todos } from '../shared/collections/todos'
+import Todos from '../shared/collections/todos'
 
 Meteor.methods({
   addTodo(text) {
@@ -15,7 +15,7 @@ Meteor.methods({
       createAt: new Date(),
       owner: this.userId,
       username: Meteor.user().username,
-      private: true
+      private: true,
     })
 
   },
