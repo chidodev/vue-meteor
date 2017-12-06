@@ -20,7 +20,7 @@
 import { Meteor } from 'meteor/meteor'
 import TodoItem from "./todo-item.vue";
 import TodoInsert from "./todo-insert.vue";
-import Todos from "../api/todos/shared/collections/todos.js";
+import Todos from "/imports/api/todos/shared/collections/todos.js";
 
 export default {
   data() {
