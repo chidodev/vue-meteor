@@ -1,1 +1,1 @@
-import '/imports/api/todos/methods.js'
+import '/imports/api/todos/server/methods'

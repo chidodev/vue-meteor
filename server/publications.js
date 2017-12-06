@@ -1,4 +1,4 @@
-import { Todos } from '../imports/api/todos/todos.js'
+import { Todos } from '../imports/api/todos/shared/collections/todos'
 
 Meteor.publish('todos', (filter) => {
   return Todos.find({
