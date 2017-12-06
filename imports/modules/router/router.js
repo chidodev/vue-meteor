@@ -33,6 +33,4 @@ const router = new VueRouter({
 //   next();
 // })
 
-export default {
-  router
-};
+export default router;
