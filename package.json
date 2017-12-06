@@ -13,9 +13,10 @@
     "meteor-node-stubs": "^0.3.2",
     "vue": "^2.5.9",
     "vue-meteor-tracker": "^1.2.3",
-    "vue-router": "^2.0.0",
-    "vuex": "^3.0.1",
-    "vuex-alt": "0.0.7"
+    "vue-router": "^2.8.1",
+    "vuex": "^2.3.1",
+    "vuex-alt": "0.0.7",
+    "vuex-router-sync": "^4.1.2"
   },
   "devDependencies": {}
 }
