@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import { VuexAltPlugin } from 'vuex-alt';
 import { sync } from 'vuex-router-sync';
+import { injectSupply } from 'vue-supply';
 
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -15,14 +16,14 @@ import App from '/imports/ui/app.vue'
 import '../accounts-config.js';
 import storeOptions from '/imports/modules/store';
 import router from '/imports/router/router';
+import '/imports/supply'
 
 Vue.use(VueMeteorTracker)
 Vue.use(BootstrapVue);
 Vue.use(Vuex);
 Vue.use(VueRouter);
 
-
-
+console.log(storeOptions);
 const supplyCache = {}
 const suppliedStoreOptions = injectSupply(storeOptions, supplyCache)
 const store = new Vuex.Store(suppliedStoreOptions)
