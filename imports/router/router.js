@@ -8,7 +8,7 @@ const getModule = (mod) => {
 }
 
 const PageHomeAsync = (resolve) => {
-  import('/imports/ui/pages/home.vue')
+  import('/imports/ui/pages/home/home.vue')
     .then((PageHome) => resolve(getModule(PageHome)));
 }
 

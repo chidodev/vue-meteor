@@ -25,7 +25,6 @@ import Todos from "/imports/api/todos/shared/collections/todos.js";
 export default {
   data() {
     return {
-      // ready: null,
       filter: "todo",
       filterOptions: [
         {
