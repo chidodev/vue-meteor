@@ -9,8 +9,8 @@
 - ~~Login Button~~ (Use loginbuttons of [vue-blaze-template](https://github.com/meteor-vue/vue-meteor/tree/master/packages/vue-blaze-template))
 - ~~Auto update the visibility of private buttons when user login/logout~~ (Use Vuex)
 - *Test with Mocha (done some tests on the server...)*
-- Apollo
-- GraphQL
+- Apollo + GraphQL
+- vue-supply
 - ~~Router~~ (use [vue-router](https://github.com/vuejs/vue-router) and [vuex-router-sync](https://github.com/vuejs/vuex-router-sync))
 - Hand-made Login Form
 

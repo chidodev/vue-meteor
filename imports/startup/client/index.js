@@ -13,15 +13,21 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 // local files
 import App from '/imports/ui/app.vue'
 import '../accounts-config.js';
-import store from '/imports/modules/store';
+import storeOptions from '/imports/modules/store';
 import router from '/imports/router/router';
 
 Vue.use(VueMeteorTracker)
 Vue.use(BootstrapVue);
 Vue.use(Vuex);
 Vue.use(VueRouter);
-Vue.use(VuexAltPlugin, { store });
 
+
+
+const supplyCache = {}
+const suppliedStoreOptions = injectSupply(storeOptions, supplyCache)
+const store = new Vuex.Store(suppliedStoreOptions)
+
+Vue.use(VuexAltPlugin, { store });
 sync(store, router);
 
 // need a global variable to use in autorun
