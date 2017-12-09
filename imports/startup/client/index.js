@@ -3,7 +3,7 @@ import VueMeteorTracker from 'vue-meteor-tracker';
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
-import { VuexAltPlugin } from 'vuex-alt';
+//import { VuexAltPlugin } from 'vuex-alt';
 import { sync } from 'vuex-router-sync';
 import { injectSupply } from 'vue-supply';
 
@@ -23,11 +23,11 @@ Vue.use(BootstrapVue);
 Vue.use(Vuex);
 Vue.use(VueRouter);
 
-const supplyCache = {}
+// vue-supply and vuex setup
+const supplyCache = {} // need an empty cache to help vue-supply stores data in vuex
 const suppliedStoreOptions = injectSupply(storeOptions, supplyCache)
 const store = new Vuex.Store(suppliedStoreOptions)
 
-Vue.use(VuexAltPlugin, { store });
 sync(store, router);
 
 // need a global variable to use in autorun

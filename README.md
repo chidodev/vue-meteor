@@ -1,4 +1,4 @@
-# Simple Todo App with Meteor and Vue
+# Not Simple Todo App with Meteor and Vue
 
 ## TODO:
 - ~~Bootstrap~~
@@ -9,7 +9,7 @@
 - ~~Login Button~~ (Use loginbuttons of [vue-blaze-template](https://github.com/meteor-vue/vue-meteor/tree/master/packages/vue-blaze-template))
 - ~~Auto update the visibility of private buttons when user login/logout~~ (Use Vuex)
 - *Test with Mocha (done some tests on the server...)*
-- ~Apollo + GraphQL~ (not sure that GraphQL is better than the Meteor's default subsription ?!)
+- *Apollo + GraphQL* (not sure that GraphQL is better than the Meteor's default subscription ?!)
 - ~~[vue-supply](https://github.com/Akryum/vue-supply)~~ (done both usage in components and vuex store)
 - ~~Router~~ (use [vue-router](https://github.com/vuejs/vue-router) and [vuex-router-sync](https://github.com/vuejs/vuex-router-sync))
 - Hand-made Login Form

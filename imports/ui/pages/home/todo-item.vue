@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex-alt';
+import { mapState } from 'vuex';
 
 export default {
   computed: {
