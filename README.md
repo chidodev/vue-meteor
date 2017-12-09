@@ -8,6 +8,7 @@
 - ~~Tracker~~ 
 - ~~Login Button~~ (Use loginbuttons of [vue-blaze-template](https://github.com/meteor-vue/vue-meteor/tree/master/packages/vue-blaze-template))
 - ~~Auto update the visibility of private buttons when user login/logout~~ (Use Vuex)
+- ~~Schema for the collection~~ (Use SimpleSchema and Collection2)
 - *Test with Mocha (done some tests on the server...)*
 - *Apollo + GraphQL* (not sure that GraphQL is better than the Meteor's default subscription ?!)
 - ~~[vue-supply](https://github.com/Akryum/vue-supply)~~ (done both usage in components and vuex store)
@@ -27,5 +28,6 @@
 - [Meteor-Vue-Enterprise-Starter](https://github.com/ejfrancis/Meteor-Vue-Enterprise-Starter)
 - [vue-supply](https://github.com/Akryum/vue-supply)
 - [vuex](https://vuex.vuejs.org/en/state.html)
+- [meteor-collection2](https://github.com/aldeed/meteor-collection2)
 
 made with &#x2764; by [Steven](https://github.com/iamstevendao).

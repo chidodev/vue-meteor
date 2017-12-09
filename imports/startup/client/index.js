@@ -3,7 +3,6 @@ import VueMeteorTracker from 'vue-meteor-tracker';
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
-//import { VuexAltPlugin } from 'vuex-alt';
 import { sync } from 'vuex-router-sync';
 import { injectSupply } from 'vue-supply';
 
@@ -32,6 +31,7 @@ sync(store, router);
 
 // need a global variable to use in autorun
 var vue;
+
 Meteor.startup(() => {
   vue = new Vue({
     replace: true,
@@ -47,6 +47,8 @@ Meteor.startup(() => {
   vue.$store.state.accounts.userId = Meteor.userId();
 })
 
+// need to use autorun to check login/out events
+// will get rid of it once we have a hand-made login form
 Meteor.autorun(() => {
 
   // place this one first to let Meteor update whenever userId change
