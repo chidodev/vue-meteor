@@ -24,6 +24,7 @@ import TodoInsert from "./todo-insert.vue";
 //import Todos from "/imports/api/todos/shared/collections/todos.js";
 import { use } from 'vue-supply';
 import { mapGetters } from 'vuex';
+import { mapState } from 'vuex-alt';
 
 export default {
   mixins: [
@@ -31,7 +32,7 @@ export default {
   ],
   data() {
     return {
-      filter: "todo",
+      //filter: "todo",
       filterOptions: [
         {
           text: "All",
@@ -54,8 +55,16 @@ export default {
   computed: {
     ...mapGetters({
       count: 'todos/count',
-      todos: 'todos/all-todos',
+      todos: 'todos/todos',
     }),
+    filter: {
+      get() {
+        return this.$store.state.todos.filter;
+      },
+      set(event) {
+        this.$store.state.todos.filter = event;
+      }
+    },
 
     // todos() {
     //   let allTodos = this.$supply.TodosSupplier.allTodos;
@@ -85,7 +94,7 @@ export default {
     },
     togglePrivacy(id, private) {
       Meteor.call("togglePrivacy", id, private);
-    }
+    },
   }
 };
 </script>

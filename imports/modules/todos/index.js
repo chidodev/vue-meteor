@@ -5,15 +5,31 @@ export default {
     use: ['TodosSupplier'],
     inject: ({ TodosSupplier }) => ({
       getters: {
-        'all-todos': () => {
-          console.log('todo: ', TodosSupplier);
-          return TodosSupplier.allTodos;
-        },
+        'all-todos': () => TodosSupplier.allTodos,
       },
     }),
   },
 
+  state: {
+    filter: 'todo',
+  },
+
+  mutations: {
+    changeState(state, newState) {
+      state.filter = newState;
+    }
+  },
+
   getters: {
-    'count': (state, getters) => getters['all-todos'].length,
+    'count': (state, getters) => getters['todos'].length,
+    'todos': (state, getters) => {
+      switch (state.filter) {
+        case 'completed':
+          return getters['all-todos'].filter(todo => todo.completed === true);
+        case 'todo':
+          return getters['all-todos'].filter(todo => todo.completed !== true);
+      }
+      return getters['all-todos'];
+    },
   },
 }
