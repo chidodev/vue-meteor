@@ -12,6 +12,7 @@
               @del="deleteTodo" 
               @check="setChecked"
               @togglePrivacy="togglePrivacy")
+    h2 {{ count }}
   .col-sm-12.todo-list(v-else)
     h2#todo-status(v-html="filterOptions.find(ele => ele.value === filter).no")
 </template>
@@ -52,20 +53,21 @@ export default {
   },
   computed: {
     ...mapGetters({
-      count: 'allTodos/count',
+      count: 'todos/count',
+      todos: 'todos/all-todos',
     }),
 
-    todos() {
-      let allTodos = this.$supply.TodosSupplier.allTodos;
-      switch (this.filter) {
-        case "all":
-          return allTodos;
-        case "todo":
-          return allTodos.filter(todo => todo.completed !== true);
-        case "completed":
-          return allTodos.filter(todo => todo.completed === true);
-      }
-    },
+    // todos() {
+    //   let allTodos = this.$supply.TodosSupplier.allTodos;
+    //   switch (this.filter) {
+    //     case "all":
+    //       return allTodos;
+    //     case "todo":
+    //       return allTodos.filter(todo => todo.completed !== true);
+    //     case "completed":
+    //       return allTodos.filter(todo => todo.completed === true);
+    //   }
+    // },
   },
   components: {
     TodoItem,

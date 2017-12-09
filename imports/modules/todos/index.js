@@ -6,7 +6,7 @@ export default {
     inject: ({ TodosSupplier }) => ({
       getters: {
         'all-todos': () => TodosSupplier.allTodos,
-        'completed-todos': () => TodosSupplier.allTodos.filter(todo => todo.completed = false),
+        //'completed-todos': () => TodosSupplier.allTodos.filter(todo => todo.completed = false),
       },
     }),
   },
