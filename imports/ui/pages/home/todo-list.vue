@@ -26,7 +26,7 @@ import { mapGetters } from 'vuex';
 
 export default {
   mixins: [
-    use('Todos'),
+    use('TodosSupplier'),
   ],
   data() {
     return {
@@ -50,37 +50,21 @@ export default {
       ]
     };
   },
-  // meteor: {
-  //   $subscribe: {
-  //     "todos": []
-  //   },
-  //   todos: {
-  //     params() {
-  //       return { selector: this.selector }
-  //     },
-  //     //deep: true, // TODO: find this out
-  //     update({ selector }) {
-  //       return Todos.find(selector, { sort: { createAt: - 1 } })
-  //     }
-  //   }
-  // },
   computed: {
-    selector() {
-      switch (this.filter) {
-        case "all":
-          return {};
-        case "todo":
-          return { completed: { $ne: true } };
-        case "completed":
-          return { completed: true };
-      }
-    },
     ...mapGetters({
-      count: 'todos/count',
+      count: 'allTodos/count',
     }),
 
     todos() {
-      return this.$supply.Todos.todos
+      let allTodos = this.$supply.TodosSupplier.allTodos;
+      switch (this.filter) {
+        case "all":
+          return allTodos;
+        case "todo":
+          return allTodos.filter(todo => todo.completed !== true);
+        case "completed":
+          return allTodos.filter(todo => todo.completed === true);
+      }
     },
   },
   components: {

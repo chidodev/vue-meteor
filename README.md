@@ -25,5 +25,6 @@
 - [boostrap-vue](https://bootstrap-vue.js.org/docs/)
 - [file structure](https://guide.meteor.com/structure.html)
 - [Meteor-Vue-Enterprise-Starter](https://github.com/ejfrancis/Meteor-Vue-Enterprise-Starter)
+- [vue-supply](https://github.com/Akryum/vue-supply)
 
 made with &#x2764; by [Steven](https://github.com/iamstevendao).

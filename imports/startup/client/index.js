@@ -23,7 +23,6 @@ Vue.use(BootstrapVue);
 Vue.use(Vuex);
 Vue.use(VueRouter);
 
-console.log(storeOptions);
 const supplyCache = {}
 const suppliedStoreOptions = injectSupply(storeOptions, supplyCache)
 const store = new Vuex.Store(suppliedStoreOptions)

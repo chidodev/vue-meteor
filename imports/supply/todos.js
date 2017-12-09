@@ -1,12 +1,12 @@
 import base from './base'
-import Todos from '/imports/api/todos/shared/collections/todos.js'
+import Todos from '/imports/api/todos/shared/collections/todos'
 
 export default {
   extends: base,
 
   data() {
     return {
-      todos: [],
+      allTodos: [],
     }
   },
 
@@ -15,7 +15,7 @@ export default {
       'todos': [],
     },
 
-    todos() {
+    allTodos() {
       return Todos.find({}, { sort: { createAt: -1 } })
     },
   },

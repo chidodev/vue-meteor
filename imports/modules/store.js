@@ -1,6 +1,6 @@
 import { Store } from 'vuex';
 
-import accounts from '/imports/modules/accounts/accounts';
+import accounts from '/imports/modules/accounts';
 import todos from '/imports/modules/todos';
 
 const plugins = [];

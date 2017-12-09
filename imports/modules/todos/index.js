@@ -2,10 +2,11 @@ export default {
   namespaced: true,
 
   supply: {
-    use: ['Todos'],
-    inject: ({ Todos }) => ({
+    use: ['TodosSupplier'],
+    inject: ({ TodosSupplier }) => ({
       getters: {
-        'all-todos': () => Todos.todos,
+        'all-todos': () => TodosSupplier.allTodos,
+        'completed-todos': () => TodosSupplier.allTodos.filter(todo => todo.completed = false),
       },
     }),
   },
