@@ -20,9 +20,14 @@
 import { Meteor } from 'meteor/meteor'
 import TodoItem from "./todo-item.vue";
 import TodoInsert from "./todo-insert.vue";
-import Todos from "/imports/api/todos/shared/collections/todos.js";
+//import Todos from "/imports/api/todos/shared/collections/todos.js";
+import { use } from 'vue-supply';
+import { mapGetters } from 'vuex';
 
 export default {
+  mixins: [
+    use('TodosSupplier'),
+  ],
   data() {
     return {
       filter: "todo",
@@ -45,31 +50,22 @@ export default {
       ]
     };
   },
-  meteor: {
-    $subscribe: {
-      "todos": []
-    },
-    todos: {
-      params() {
-        return { selector: this.selector }
-      },
-      //deep: true, // TODO: find this out
-      update({ selector }) {
-        return Todos.find(selector, { sort: { createAt: - 1 } })
-      }
-    }
-  },
   computed: {
-    selector() {
+    ...mapGetters({
+      count: 'allTodos/count',
+    }),
+
+    todos() {
+      let allTodos = this.$supply.TodosSupplier.allTodos;
       switch (this.filter) {
         case "all":
-          return {};
+          return allTodos;
         case "todo":
-          return { completed: { $ne: true } };
+          return allTodos.filter(todo => todo.completed !== true);
         case "completed":
-          return { completed: true };
+          return allTodos.filter(todo => todo.completed === true);
       }
-    }
+    },
   },
   components: {
     TodoItem,
