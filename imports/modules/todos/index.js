@@ -5,8 +5,10 @@ export default {
     use: ['TodosSupplier'],
     inject: ({ TodosSupplier }) => ({
       getters: {
-        'all-todos': () => TodosSupplier.allTodos,
-        //'completed-todos': () => TodosSupplier.allTodos.filter(todo => todo.completed = false),
+        'all-todos': () => {
+          console.log('todo: ', TodosSupplier);
+          return TodosSupplier.allTodos;
+        },
       },
     }),
   },

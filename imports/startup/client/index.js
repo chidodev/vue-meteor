@@ -36,6 +36,7 @@ Meteor.startup(() => {
   vue = new Vue({
     replace: true,
     render: (h) => h(App),
+    supplyCache, // need to put cache inside new Vue instance
     store,
     router,
   })
