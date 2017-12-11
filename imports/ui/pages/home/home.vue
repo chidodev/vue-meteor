@@ -5,7 +5,7 @@
       h1.panel-title.text-center {{title}}
     .panel-body
       .row
-        .col-sm-2(v-blaze="'loginButtons'")
+        .col-sm-3(v-blaze="'loginButtons'")
       todo-list
 </template>
 

@@ -18,7 +18,10 @@ export default {
   height: 80%;
 }
 footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
   text-align: right;
-  padding: 1em;
+  padding: 0.5em 1em;
 }
 </style>
