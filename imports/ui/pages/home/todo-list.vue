@@ -26,7 +26,7 @@ import { mapGetters } from 'vuex';
 
 export default {
   mixins: [
-    use('TodosSupplier'), 
+    use('TodosSupplier'),
   ],
   data() {
     return {
@@ -86,6 +86,7 @@ export default {
   },
   methods: {
     insertTodo(text) {
+      debugger;
       Meteor.call("addTodo", text);
     },
     deleteTodo(id) {

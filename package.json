@@ -2,7 +2,8 @@
   "name": "meteor-vue-demo",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "debug": "meteor run --inspect"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",

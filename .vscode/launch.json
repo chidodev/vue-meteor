@@ -1,31 +1,35 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "node",
+      "type": "chrome",
       "request": "launch",
-      "name": "Launch Program",
-      "program": "${workspaceFolder}/client\\main.js"
+      "name": "Meteor: Chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceRoot}",
+      "sourceMaps": true
     },
     {
       "type": "node",
       "request": "launch",
-      "name": "Meteor Server",
-      "cwd": "${workspaceRoot}/",
-      "runtimeExecutable": "${workspaceRoot}/.meteor/local/dev_bundle/bin/npm",
-      "restart": true,
-      "timeout": 100000,
-      "stopOnEntry": false,
+      "name": "Meteor: Node",
+      "runtimeExecutable": "npm",
       "runtimeArgs": [
         "run",
-        "dev-debug"
+        "debug"
       ],
       "sourceMaps": true,
-      "protocol": "inspector",
-      "port": 5959
+      "port": 9229,
+      "timeout": 30000
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Meteor: All",
+      "configurations": [
+        "Meteor: Node",
+        "Meteor: Chrome"
+      ]
     }
   ]
 }
