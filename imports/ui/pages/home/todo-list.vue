@@ -23,6 +23,9 @@ import TodoInsert from "./todo-insert.vue";
 import { use } from 'vue-supply';
 import { mapGetters } from 'vuex';
 
+function formatBadge(label) {
+  return `<span class="badge badge-primary">${label}</span>`;
+}
 export default {
   mixins: [
     use('TodosSupplier'),
@@ -45,17 +48,17 @@ export default {
     filterOptions() {
       return [
         {
-          text: "All (" + this.count.all + ")",
+          text: "All " + formatBadge(this.count.all),
           value: "all",
           no: "You have no todos &#x1F62A;"
         },
         {
-          text: "Todo (" + this.count.todo + ")",
+          text: "Todo " + formatBadge(this.count.todo),
           value: "todo",
           no: "Yay! No todos left &#x1F60E;"
         },
         {
-          text: "Completed (" + this.count.completed + ")",
+          text: "Completed " + formatBadge(this.count.completed),
           value: "completed",
           no: "No todos completed &#x2639;"
         }
