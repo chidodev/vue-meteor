@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 // local files
-import App from '/imports/ui/app.vue'
+import App from './app.vue'
 import '../accounts-config.js';
 import storeOptions from '/imports/modules/store';
 import router from '/imports/router/router';

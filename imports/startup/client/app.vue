@@ -1,14 +1,19 @@
 <template lang="pug">
 body
-  include ./includes/header
+  sheader
   router-view
-  include ./includes/footer
+  sfooter
 </template>
 
 <script>
-
+import sheader from '/imports/ui/includes/header';
+import sfooter from '/imports/ui/includes/footer'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    sheader,
+    sfooter,
+  }
 };
 </script>
 
