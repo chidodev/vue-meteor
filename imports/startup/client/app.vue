@@ -7,7 +7,8 @@ body
 
 <script>
 import sheader from '/imports/ui/includes/header';
-import sfooter from '/imports/ui/includes/footer'
+import sfooter from '/imports/ui/includes/footer';
+
 export default {
   name: 'App',
   components: {

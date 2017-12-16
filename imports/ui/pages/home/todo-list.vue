@@ -12,7 +12,6 @@
               @del="deleteTodo" 
               @check="setChecked"
               @togglePrivacy="togglePrivacy")
-    h2 {{ count }}
   .col-sm-12.todo-list(v-else)
     h2#todo-status(v-html="filterOptions.find(ele => ele.value === filter).no")
 </template>
@@ -28,28 +27,6 @@ export default {
   mixins: [
     use('TodosSupplier'),
   ],
-  data() {
-    return {
-      //filter: "todo",
-      filterOptions: [
-        {
-          text: "All",
-          value: "all",
-          no: "You have no todos &#x1F62A;"
-        },
-        {
-          text: "Todo",
-          value: "todo",
-          no: "Yay! No todos left &#x1F60E;"
-        },
-        {
-          text: "Completed",
-          value: "completed",
-          no: "No todos completed &#x2639;"
-        }
-      ]
-    };
-  },
   computed: {
     ...mapGetters({
       count: 'todos/count',
@@ -65,7 +42,25 @@ export default {
         this.$store.state.todos.filter = event;
       }
     },
-
+    filterOptions() {
+      return [
+        {
+          text: "All (" + this.count.all + ")",
+          value: "all",
+          no: "You have no todos &#x1F62A;"
+        },
+        {
+          text: "Todo (" + this.count.todo + ")",
+          value: "todo",
+          no: "Yay! No todos left &#x1F60E;"
+        },
+        {
+          text: "Completed (" + this.count.completed + ")",
+          value: "completed",
+          no: "No todos completed &#x2639;"
+        }
+      ]
+    },
     // we can also get data from supply by using this.$supply
 
     // todos() {
@@ -86,7 +81,6 @@ export default {
   },
   methods: {
     insertTodo(text) {
-      debugger;
       Meteor.call("addTodo", text);
     },
     deleteTodo(id) {
