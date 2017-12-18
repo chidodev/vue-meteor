@@ -17,6 +17,7 @@
 </template>
 
 <script>
+'use strict';
 import { Meteor } from 'meteor/meteor'
 import TodoItem from "./todo-item.vue";
 import TodoInsert from "./todo-insert.vue";
@@ -92,8 +93,8 @@ export default {
     setChecked(id, completed) {
       Meteor.call("checkTodo", id, completed);
     },
-    togglePrivacy(id, private) {
-      Meteor.call("togglePrivacy", id, private);
+    togglePrivacy(id, privatex) {
+      Meteor.call("togglePrivacy", id, privatex);
     },
   }
 };

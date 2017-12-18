@@ -1,10 +1,10 @@
 import home from './home.vue';
-import { mount } from 'avoriaz';
+import { shallow } from 'avoriaz';
 
 describe('Home', () => {
 
   it('renders without crashing', () => {
-    const wrapper = mount(home);
+    const wrapper = shallow(home);
     expect(wrapper.find('todo-list').length).toEqual(1);
   })
 })
