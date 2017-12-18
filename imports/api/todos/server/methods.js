@@ -1,13 +1,13 @@
-import { Meteor } from 'meteor/meteor'
-import { check } from 'meteor/check'
-import Todos from '../shared/collections/todos'
+import { Meteor } from 'meteor/meteor';
+import { check } from 'meteor/check';
+import Todos from '../shared/collections/todos';
 
 Meteor.methods({
   addTodo(text) {
-    check(text, String)
+    check(text, String);
 
     if (!this.userId) {
-      throw new Meteor.Error('not-authorized')
+      throw new Meteor.Error('not-authorized');
     }
 
     Todos.insert({
@@ -16,18 +16,17 @@ Meteor.methods({
       owner: this.userId,
       username: Meteor.user().username,
       private: true,
-    })
-
+    });
   },
   removeTodo(_id) {
-    Todos.remove(_id)
+    Todos.remove(_id);
   },
   checkTodo(id, completed) {
-    check(completed, Boolean)
-    Todos.update(id, { $set: { completed } })
+    check(completed, Boolean);
+    Todos.update(id, { $set: { completed } });
   },
-  togglePrivacy(id, private) {
-    check(private, Boolean)
-    Todos.update(id, { $set: { private } })
-  }
-})
+  togglePrivacy(id, isPrivate) {
+    check(isPrivate, Boolean);
+    Todos.update(id, { $set: { isPrivate } });
+  },
+});

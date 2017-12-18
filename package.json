@@ -12,14 +12,14 @@
     "bootstrap": "^4.0.0-beta.2",
     "bootstrap-vue": "^1.4.0",
     "meteor-node-stubs": "^0.3.2",
+    "pug": "^2.0.0-rc.4",
     "simpl-schema": "^1.2.2",
     "vue": "^2.5.11",
     "vue-meteor-tracker": "^1.2.3",
     "vue-router": "^2.8.1",
     "vue-supply": "^0.3.0",
     "vuex": "^2.3.1",
-    "vuex-router-sync": "^4.1.2",
-    "pug": "^2.0.0-rc.4"
+    "vuex-router-sync": "^4.1.2"
   },
   "devDependencies": {
     "avoriaz": "^6.3.0",

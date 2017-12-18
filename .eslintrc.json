@@ -1,0 +1,50 @@
+{
+  "root": true,
+  "extends": "airbnb/base",
+  "settings": {
+    "import/resolver": {
+      "meteor": {
+        "moduleDirectory": [
+          "./client/",
+          "./imports/",
+          "./server/"
+        ]
+      }
+    }
+  },
+  "plugins": [
+    "html"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "rules": {
+    "func-names": "off",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-absolute-path": "off",
+    "import/extensions": [
+      "off",
+      "never"
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "_id",
+          "__",
+          "_actionsNestedObject",
+          "_send"
+        ]
+      }
+    ]
+  },
+  "globals": {
+    "window": true,
+    "Promise": true,
+    "document": true,
+    "google": true
+  }
+}
