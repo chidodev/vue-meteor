@@ -18,9 +18,7 @@ shell-server@0.3.0            # Server-side component of the `meteor shell` comm
 static-html
 akryum:vue
 akryum:vue-component
-akryum:vue-pug
 akryum:vue-less
-mwc:synthesis-pug
 accounts-ui@1.2.0
 accounts-password@1.5.0
 akryum:vue-blaze-template

@@ -38,11 +38,5 @@
     "vue-template-compiler": "^2.5.11",
     "vue-template-es2015-compiler": "^1.5.2",
     "vue-test-utils": "1.0.0-beta"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "^vue$": "vue/dist/vue.common.js",
-      "^meteor/(.*)": "<rootDir>/.meteorMocks/index.js"
-    }
   }
 }
