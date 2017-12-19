@@ -1,7 +1,7 @@
 const state = {
   userId: null,
-}
-const getters = {}
+};
+const getters = {};
 const accounts = {
   namespaced: true,
   state,

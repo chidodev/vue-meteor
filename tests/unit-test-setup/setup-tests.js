@@ -1,9 +1,10 @@
 import Vue from 'vue';
-import iView from 'iview';
+
+//import iView from 'iview';
 
 // iView is used in meteor build system via efrancis:iview atmosphere package (because of need to bundle fonts w/less).
 // to get the iView components to work in unit tests, we need to import it right from npm as a devDependency and hook it up
-Vue.use(iView);
+//Vue.use(iView);
 
 // throw uncaught Promise rejections to fail the test and
 // log a stack trace
@@ -45,7 +46,7 @@ const _getNodeDataAttrs = function (el) {
   let len = atts.length;
   let attr;
   let _datasetMap = [];
-    // represents el.dataset
+  // represents el.dataset
   let proxy = {};
   let datakey;
   for (; i < len; i++) {

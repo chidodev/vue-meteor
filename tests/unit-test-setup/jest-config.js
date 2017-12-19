@@ -9,8 +9,8 @@ module.exports = {
   //   '<rootDir>/src/imports/modules/[a-zA-Z-]+/shared/collections/'
   // ],
   // 'testURL': 'http://www.meteor-vue-app.com',
-  // 'setupFiles': ['<rootDir>/tests/unit-test-setup/setup-tests.js'],
-  // 'verbose': true,
+  'setupFiles': ['<rootDir>/tests/unit-test-setup/setup-tests.js'],
+  'verbose': true,
   // 'collectCoverage': true,
   // 'collectCoverageFrom': ['src/**/*', '!src/**/*-fixture.js'],
   // 'coverageDirectory': '<rootDir>/tests/coverage/unit-tests/',
@@ -20,12 +20,13 @@ module.exports = {
   ],
   'transform': {
     '^.+\\.js$': 'babel-jest',
-    '.*\\.(vue)$': 'vue-jest'
+    '.*\\.(vue)$': 'jest-vue-preprocessor'
   },
   'moduleNameMapper': {
     '^meteor/(.*)': '<rootDir>/tests/unit-test-setup/meteor-mocks/$1.js',
     '^[/](.*)': '<rootDir>/$1',
     "^vue$": "vue/dist/vue.common.js",
+    "\\.(css|scss)$": "<rootDir>/tests/style/styleMock.js"
   },
   'coverageThreshold': {
     'global': {

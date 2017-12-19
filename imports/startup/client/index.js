@@ -14,25 +14,30 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 import App from './app.vue';
 import '../accounts-config.js';
 import storeOptions from '/imports/modules/store';
-import router from '/imports/router/router';
+import { createRouter } from '/imports/router/router';
 import '/imports/supply';
 
-Vue.use(VueMeteorTracker);
-Vue.use(BootstrapVue);
-Vue.use(Vuex);
-Vue.use(VueRouter);
+export const setupVue = () => {
+  Vue.use(VueMeteorTracker);
+  Vue.use(BootstrapVue);
+  Vue.use(Vuex);
+  Vue.use(VueRouter);
+  // vue-supply and vuex setup
+  const supplyCache = {}; // need an empty cache to help vue-supply stores data in vuex
+  const suppliedStoreOptions = injectSupply(storeOptions, supplyCache);
+  const store = new Vuex.Store(suppliedStoreOptions);
 
-// vue-supply and vuex setup
-const supplyCache = {}; // need an empty cache to help vue-supply stores data in vuex
-const suppliedStoreOptions = injectSupply(storeOptions, supplyCache);
-const store = new Vuex.Store(suppliedStoreOptions);
+  const router = createRouter();
+  sync(store, router);
 
-sync(store, router);
+  return { supplyCache, store, router };
+};
 
 // need a global variable to use in autorun
 let vue;
 
 Meteor.startup(() => {
+  const { supplyCache, store, router } = setupVue();
   vue = new Vue({
     replace: true,
     render: h => h(App),

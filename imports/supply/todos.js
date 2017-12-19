@@ -1,5 +1,5 @@
-import base from './base'
-import Todos from '/imports/api/todos/shared/collections/todos'
+import Todos from '/imports/api/todos/shared/collections/todos';
+import base from './base';
 
 // subscribe meteor's publications into supply
 export default {
@@ -8,16 +8,16 @@ export default {
   data() {
     return {
       allTodos: [],
-    }
+    };
   },
 
   meteor: {
     $subscribe: {
-      'todos': [],
+      todos: [],
     },
 
     allTodos() {
-      return Todos.find({}, { sort: { createAt: -1 } })
+      return Todos.find({}, { sort: { createAt: -1 } });
     },
   },
-}
+};

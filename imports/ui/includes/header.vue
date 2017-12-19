@@ -9,7 +9,7 @@ b-navbar(toggleable="md" type="dark" variant="primary")
 
 <script>
 export default {
-  name: 'header',
+  name: 'sheader',
 }
 </script>
 

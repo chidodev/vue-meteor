@@ -16,25 +16,24 @@ export default {
   },
 
   getters: {
-    //'count': (state, getters) => getters['todos'].length,
-    'count': (state, getters) => {
-      return {
-        all: getters['all-todos'].length,
-        todo: getters['all-todos'].filter(todo => todo.completed !== true).length,
-        completed: getters['all-todos'].filter(todo => todo.completed === true).length,
-      }
-    },
+    // 'count': (state, getters) => getters['todos'].length,
+    count: (state, getters) => ({
+      all: getters['all-todos'].length,
+      todo: getters['all-todos'].filter(todo => todo.completed !== true).length,
+      completed: getters['all-todos'].filter(todo => todo.completed === true).length,
+    }),
 
     // todos based on the chosen status of users
-    'todos': (state, getters) => {
+    todos: (state, getters) => {
       switch (state.filter) {
         case 'completed':
           return getters['all-todos'].filter(todo => todo.completed === true);
         case 'todo':
           return getters['all-todos'].filter(todo => todo.completed !== true);
+        default:
+          // otherwise returns all todos
+          return getters['all-todos'];
       }
-      // otherwise returns all todos
-      return getters['all-todos'];
     },
   },
-}
+};

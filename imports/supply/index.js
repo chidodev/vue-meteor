@@ -1,4 +1,4 @@
-import Todos from './todos.js'
-import { register } from 'vue-supply'
+import { register } from 'vue-supply';
+import Todos from './todos.js';
 
 register('TodosSupplier', Todos);

@@ -1,3 +1,4 @@
+import { Mongo } from 'meteor/mongo';
 import TodosSchema from '../schemas/todos';
 
 const Todos = new Mongo.Collection('todos');

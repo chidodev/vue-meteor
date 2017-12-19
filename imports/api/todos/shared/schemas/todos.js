@@ -1,6 +1,6 @@
 import SimpleSchema from 'simpl-schema';
 
-export default TodoSchema = new SimpleSchema({
+export default new SimpleSchema({
   text: {
     type: String,
     required: true,
@@ -25,5 +25,5 @@ export default TodoSchema = new SimpleSchema({
   completed: {
     type: Boolean,
     optional: true,
-  }
+  },
 });

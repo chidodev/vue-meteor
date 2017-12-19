@@ -5,9 +5,9 @@
     "import/resolver": {
       "meteor": {
         "moduleDirectory": [
-          "./client/",
-          "./imports/",
-          "./server/"
+          "client",
+          "imports",
+          "server"
         ]
       }
     }

@@ -1,11 +1,27 @@
 import app from './app';
-import { mount } from 'avoriaz';
+import { shallow } from 'avoriaz';
+import { setupVue } from '/imports/startup/client/';
 
 describe('App', () => {
-  const wrapper = mount(app);
+  let router;
+  let store;
+  let supplyCache;
+  beforeEach(() => {
+    const setup = setupVue();
+    router = setup.router;
+    store = setup.store;
+    supplyCache = setup.supplyCache;
+  });
+
+  const wrapper = shallow(app, {
+    supplyCache,
+    store,
+    router,
+    stubs: ['router-link', 'router-view']
+  });
 
   it('renders header and footer', () => {
-    expect(wrapper.find('.b-nav').length).toEqual(1);
+    expect(wrapper.find('nav').length).toEqual(1);
     expect(wrapper.find('footer').length).toEqual(1);
   });
 });
