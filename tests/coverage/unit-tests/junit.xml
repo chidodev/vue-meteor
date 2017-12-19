@@ -1,0 +1,426 @@
+<testsuites name="jest tests">
+  <testsuite name="layout-actions-mutations" tests="15" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:12" time="0.767">
+    <testcase classname="layout-actions-mutations actions showMobileNav commits SHOW_MOBILE_NAV with no payload" name="layout-actions-mutations actions showMobileNav commits SHOW_MOBILE_NAV with no payload" time="0.005">
+    </testcase>
+    <testcase classname="layout-actions-mutations actions showLargeNav commits SHOW_LARGE_NAV with no payload" name="layout-actions-mutations actions showLargeNav commits SHOW_LARGE_NAV with no payload" time="0">
+    </testcase>
+    <testcase classname="layout-actions-mutations actions toggleMobileNavExpanded commits TOGGLE_MOBILE_NAV_EXPANDED with no payload" name="layout-actions-mutations actions toggleMobileNavExpanded commits TOGGLE_MOBILE_NAV_EXPANDED with no payload" time="0">
+    </testcase>
+    <testcase classname="layout-actions-mutations actions setLayoutThemeLight commits SET_LAYOUT_THEME_LIGHT" name="layout-actions-mutations actions setLayoutThemeLight commits SET_LAYOUT_THEME_LIGHT" time="0.001">
+    </testcase>
+    <testcase classname="layout-actions-mutations actions setLayoutThemeDark commits SET_LAYOUT_THEME_DARK" name="layout-actions-mutations actions setLayoutThemeDark commits SET_LAYOUT_THEME_DARK" time="0.001">
+    </testcase>
+    <testcase classname="layout-actions-mutations actions setLayoutThemeDark commits UPDATE_NAV_ROUTES" name="layout-actions-mutations actions setLayoutThemeDark commits UPDATE_NAV_ROUTES" time="0.001">
+    </testcase>
+    <testcase classname="layout-actions-mutations actions updateNavRoutes commits UPDATE_NAV_ROUTES" name="layout-actions-mutations actions updateNavRoutes commits UPDATE_NAV_ROUTES" time="0.001">
+    </testcase>
+    <testcase classname="layout-actions-mutations mutations SHOW_MOBILE_NAV sets state.isMobileNavVisible to true" name="layout-actions-mutations mutations SHOW_MOBILE_NAV sets state.isMobileNavVisible to true" time="0.001">
+    </testcase>
+    <testcase classname="layout-actions-mutations mutations SHOW_LARGE_NAV sets state.isMobileNavVisible to false" name="layout-actions-mutations mutations SHOW_LARGE_NAV sets state.isMobileNavVisible to false" time="0">
+    </testcase>
+    <testcase classname="layout-actions-mutations mutations TOGGLE_MOBILE_NAV_EXPANDED sets state.isMobileNavExpanded to true when false" name="layout-actions-mutations mutations TOGGLE_MOBILE_NAV_EXPANDED sets state.isMobileNavExpanded to true when false" time="0">
+    </testcase>
+    <testcase classname="layout-actions-mutations mutations TOGGLE_MOBILE_NAV_EXPANDED sets state.isMobileNavExpanded to false when true" name="layout-actions-mutations mutations TOGGLE_MOBILE_NAV_EXPANDED sets state.isMobileNavExpanded to false when true" time="0">
+    </testcase>
+    <testcase classname="layout-actions-mutations mutations UPDATE_NAV_ROUTES sets state.navRoutes to user routes if current user is not admin or super admin" name="layout-actions-mutations mutations UPDATE_NAV_ROUTES sets state.navRoutes to user routes if current user is not admin or super admin" time="0.001">
+    </testcase>
+    <testcase classname="layout-actions-mutations mutations UPDATE_NAV_ROUTES sets state.navRoutes to admin routes if current user is admin or super admin" name="layout-actions-mutations mutations UPDATE_NAV_ROUTES sets state.navRoutes to admin routes if current user is admin or super admin" time="0">
+    </testcase>
+    <testcase classname="layout-actions-mutations mutations SET_LAYOUT_THEME_LIGHT sets state.layoutTheme to &quot;light&quot;" name="layout-actions-mutations mutations SET_LAYOUT_THEME_LIGHT sets state.layoutTheme to &quot;light&quot;" time="0">
+    </testcase>
+    <testcase classname="layout-actions-mutations mutations SET_LAYOUT_THEME_DARK sets state.layoutTheme to &quot;dark&quot;" name="layout-actions-mutations mutations SET_LAYOUT_THEME_DARK sets state.layoutTheme to &quot;dark&quot;" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="accounts-actions-mutations" tests="30" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:12" time="2.405">
+    <testcase classname="accounts-actions-mutations actions registerUser calls createUnverifiedUser() method, when that fails it commits REGISTER_FAILED with error and rejects error, " name="accounts-actions-mutations actions registerUser calls createUnverifiedUser() method, when that fails it commits REGISTER_FAILED with error and rejects error, " time="0.008">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions registerUser calls createUnverifiedUser() method, when that succees it commits CLEAR_REGISTER_FAILURE and ENROLL_ACCOUNT_EMAIL_SENT, then resolves true, " name="accounts-actions-mutations actions registerUser calls createUnverifiedUser() method, when that succees it commits CLEAR_REGISTER_FAILURE and ENROLL_ACCOUNT_EMAIL_SENT, then resolves true, " time="0.002">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions registerUser rejects error if createUnverifiedUser throws" name="accounts-actions-mutations actions registerUser rejects error if createUnverifiedUser throws" time="0.001">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions clearRegisterFailure clears any registure failure" name="accounts-actions-mutations actions clearRegisterFailure clears any registure failure" time="0.001">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions enrollVerifyAccount rejects password validation error and commits ENROLL_ACCOUNT_FAILED if password isn&apos;t strong enough" name="accounts-actions-mutations actions enrollVerifyAccount rejects password validation error and commits ENROLL_ACCOUNT_FAILED if password isn&apos;t strong enough" time="0.023">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions enrollVerifyAccount with strong password, calls Accounts.resetPassword, when that fails rejects error when resetPassword fails and commits ENROLL_ACCOUNT_FAILED" name="accounts-actions-mutations actions enrollVerifyAccount with strong password, calls Accounts.resetPassword, when that fails rejects error when resetPassword fails and commits ENROLL_ACCOUNT_FAILED" time="0.002">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions enrollVerifyAccount with strong password and reset password success, clears any error and resolves true" name="accounts-actions-mutations actions enrollVerifyAccount with strong password and reset password success, clears any error and resolves true" time="0.002">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions clearEnrollAccoutnFailure clears enroll account failure" name="accounts-actions-mutations actions clearEnrollAccoutnFailure clears enroll account failure" time="0">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions loginUser calls Meteor.loginWithPassword with credentials, when login fails, rejects error and commits failure" name="accounts-actions-mutations actions loginUser calls Meteor.loginWithPassword with credentials, when login fails, rejects error and commits failure" time="0.002">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions loginUser calls Meteor.loginWithPassword with credentials, when login succeeds, resolves true and clears error" name="accounts-actions-mutations actions loginUser calls Meteor.loginWithPassword with credentials, when login succeeds, resolves true and clears error" time="0.001">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions clearLoginFailure clears any login failure" name="accounts-actions-mutations actions clearLoginFailure clears any login failure" time="0">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions setUser sets the provided user" name="accounts-actions-mutations actions setUser sets the provided user" time="0.001">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions logoutUser calls Meteor.logout, when that fails, resolves error" name="accounts-actions-mutations actions logoutUser calls Meteor.logout, when that fails, resolves error" time="0.001">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions logoutUser calls Meteor.logout, when that succeeds, resolves true" name="accounts-actions-mutations actions logoutUser calls Meteor.logout, when that succeeds, resolves true" time="0.002">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions sendPasswordResetEmail calls Accoutns.forgotPassword, when that fails, commits failure and rejects error" name="accounts-actions-mutations actions sendPasswordResetEmail calls Accoutns.forgotPassword, when that fails, commits failure and rejects error" time="0.002">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions sendPasswordResetEmail calls Accoutns.forgotPassword, when that succeeds, clears any error and resolves true" name="accounts-actions-mutations actions sendPasswordResetEmail calls Accoutns.forgotPassword, when that succeeds, clears any error and resolves true" time="0.001">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions passwordReset calls Accounts.resetPassword, when that failures, commits failure with error and rejects error" name="accounts-actions-mutations actions passwordReset calls Accounts.resetPassword, when that failures, commits failure with error and rejects error" time="0.002">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions passwordReset calls Accounts.resetPassword, when that succeeds, clears error and resolves true" name="accounts-actions-mutations actions passwordReset calls Accounts.resetPassword, when that succeeds, clears error and resolves true" time="0">
+    </testcase>
+    <testcase classname="accounts-actions-mutations actions clearPasswordResetFailure clears any password reset failure" name="accounts-actions-mutations actions clearPasswordResetFailure clears any password reset failure" time="0.001">
+    </testcase>
+    <testcase classname="accounts-actions-mutations mutations SET_USER stores user in state.user" name="accounts-actions-mutations mutations SET_USER stores user in state.user" time="0">
+    </testcase>
+    <testcase classname="accounts-actions-mutations mutations LOGIN_FAILED stores login failure on state.loginError" name="accounts-actions-mutations mutations LOGIN_FAILED stores login failure on state.loginError" time="0.001">
+    </testcase>
+    <testcase classname="accounts-actions-mutations mutations CLEAR_LOGIN_FAILURE clears login error on state.loginError" name="accounts-actions-mutations mutations CLEAR_LOGIN_FAILURE clears login error on state.loginError" time="0">
+    </testcase>
+    <testcase classname="accounts-actions-mutations mutations REGISTER_FAILED stores register failure on state.registerError and sets  state.enrollAccountEmailSent to false" name="accounts-actions-mutations mutations REGISTER_FAILED stores register failure on state.registerError and sets  state.enrollAccountEmailSent to false" time="0">
+    </testcase>
+    <testcase classname="accounts-actions-mutations mutations CLEAR_REGISTER_FAILURE clears register error on state.registerError" name="accounts-actions-mutations mutations CLEAR_REGISTER_FAILURE clears register error on state.registerError" time="0.001">
+    </testcase>
+    <testcase classname="accounts-actions-mutations mutations PASSWORD_RESET_EMAIL_SENT sets state.passwordResetEmailSent to true" name="accounts-actions-mutations mutations PASSWORD_RESET_EMAIL_SENT sets state.passwordResetEmailSent to true" time="0">
+    </testcase>
+    <testcase classname="accounts-actions-mutations mutations PASSWORD_RESET_FAILED stores error in state.passwordResetError" name="accounts-actions-mutations mutations PASSWORD_RESET_FAILED stores error in state.passwordResetError" time="0">
+    </testcase>
+    <testcase classname="accounts-actions-mutations mutations CLEAR_PASSWORD_RESET_FAILURE clears error in state.passwordResetError" name="accounts-actions-mutations mutations CLEAR_PASSWORD_RESET_FAILURE clears error in state.passwordResetError" time="0.001">
+    </testcase>
+    <testcase classname="accounts-actions-mutations mutations ENROLL_ACCOUNT_EMAIL_SENT sets state.enrollAccountEmailSent to true" name="accounts-actions-mutations mutations ENROLL_ACCOUNT_EMAIL_SENT sets state.enrollAccountEmailSent to true" time="0">
+    </testcase>
+    <testcase classname="accounts-actions-mutations mutations ENROLL_ACCOUNT_FAILED stores error in state.enrollAccountError" name="accounts-actions-mutations mutations ENROLL_ACCOUNT_FAILED stores error in state.enrollAccountError" time="0">
+    </testcase>
+    <testcase classname="accounts-actions-mutations mutations CLEAR_ENROLL_ACCOUNT_FAILURE clears error in state.enrollAccountError" name="accounts-actions-mutations mutations CLEAR_ENROLL_ACCOUNT_FAILURE clears error in state.enrollAccountError" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="PasswordResetEmailForm" tests="8" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:14" time="1.34">
+    <testcase classname="PasswordResetEmailForm renders without crashing" name="PasswordResetEmailForm renders without crashing" time="0.076">
+    </testcase>
+    <testcase classname="PasswordResetEmailForm submit button disables submit if email is empty" name="PasswordResetEmailForm submit button disables submit if email is empty" time="0.029">
+    </testcase>
+    <testcase classname="PasswordResetEmailForm submit button disables submit if email is filled with invalid email address" name="PasswordResetEmailForm submit button disables submit if email is filled with invalid email address" time="0.097">
+    </testcase>
+    <testcase classname="PasswordResetEmailForm submit button enables submit if email is filled with a valid email address" name="PasswordResetEmailForm submit button enables submit if email is filled with a valid email address" time="0.059">
+    </testcase>
+    <testcase classname="PasswordResetEmailForm calls actions.accounts.sendPasswordResetEmail when submitted" name="PasswordResetEmailForm calls actions.accounts.sendPasswordResetEmail when submitted" time="0.035">
+    </testcase>
+    <testcase classname="PasswordResetEmailForm sent success displays sent message if sent" name="PasswordResetEmailForm sent success displays sent message if sent" time="0.028">
+    </testcase>
+    <testcase classname="PasswordResetEmailForm sent failed displays failure message if failed to send" name="PasswordResetEmailForm sent failed displays failure message if failed to send" time="0.025">
+    </testcase>
+    <testcase classname="PasswordResetEmailForm clears password reset error when destroyed" name="PasswordResetEmailForm clears password reset error when destroyed" time="0.041">
+    </testcase>
+  </testsuite>
+  <testsuite name="EnrollAccountForm" tests="13" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:12" time="3.872">
+    <testcase classname="EnrollAccountForm renders without crashing" name="EnrollAccountForm renders without crashing" time="0.09">
+    </testcase>
+    <testcase classname="EnrollAccountForm enrolling disables submit button if both passwords not filled" name="EnrollAccountForm enrolling disables submit button if both passwords not filled" time="0.124">
+    </testcase>
+    <testcase classname="EnrollAccountForm enrolling password validation disables submit button and displays error if password 1 contains &quot;password&quot;" name="EnrollAccountForm enrolling password validation disables submit button and displays error if password 1 contains &quot;password&quot;" time="0.09">
+    </testcase>
+    <testcase classname="EnrollAccountForm enrolling password validation disables submit button and displays error if password 2 contains &quot;password&quot;" name="EnrollAccountForm enrolling password validation disables submit button and displays error if password 2 contains &quot;password&quot;" time="0.057">
+    </testcase>
+    <testcase classname="EnrollAccountForm enrolling password validation displays error if password 1 doesn&apos;t pass schema validation" name="EnrollAccountForm enrolling password validation displays error if password 1 doesn&apos;t pass schema validation" time="0.068">
+    </testcase>
+    <testcase classname="EnrollAccountForm enrolling password validation disables submit button if both passwords filled, match, but don&apos;t pass schema validation" name="EnrollAccountForm enrolling password validation disables submit button if both passwords filled, match, but don&apos;t pass schema validation" time="0.109">
+    </testcase>
+    <testcase classname="EnrollAccountForm enrolling password validation enables submit button if both passwords filled, match, and pass schema validation" name="EnrollAccountForm enrolling password validation enables submit button if both passwords filled, match, and pass schema validation" time="0.062">
+    </testcase>
+    <testcase classname="EnrollAccountForm enrolling submit calls actions.accounts.enrollVerifyAccount on submit" name="EnrollAccountForm enrolling submit calls actions.accounts.enrollVerifyAccount on submit" time="0.097">
+    </testcase>
+    <testcase classname="EnrollAccountForm enrolling clears enrollment error when destroyed" name="EnrollAccountForm enrolling clears enrollment error when destroyed" time="0.028">
+    </testcase>
+    <testcase classname="EnrollAccountForm enrolling starts with password hidden" name="EnrollAccountForm enrolling starts with password hidden" time="0.033">
+    </testcase>
+    <testcase classname="EnrollAccountForm enrolled success displays success message if url param present" name="EnrollAccountForm enrolled success displays success message if url param present" time="0.014">
+    </testcase>
+    <testcase classname="EnrollAccountForm enrolled success redirects to home when &quot;Go to Home&quot; button is clicked" name="EnrollAccountForm enrolled success redirects to home when &quot;Go to Home&quot; button is clicked" time="0.053">
+    </testcase>
+    <testcase classname="EnrollAccountForm destroyed redirects to home when &quot;Go to Home&quot; button is clicked" name="EnrollAccountForm destroyed redirects to home when &quot;Go to Home&quot; button is clicked" time="0.009">
+    </testcase>
+  </testsuite>
+  <testsuite name="set-user-global-role" tests="6" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:16" time="0.189">
+    <testcase classname="set-user-global-role does nothing if not on server" name="set-user-global-role does nothing if not on server" time="0.002">
+    </testcase>
+    <testcase classname="set-user-global-role throws 403 if user is not &quot;admin&quot; or &quot;super admin&quot;" name="set-user-global-role throws 403 if user is not &quot;admin&quot; or &quot;super admin&quot;" time="0.001">
+    </testcase>
+    <testcase classname="set-user-global-role throws 403 if attempting to set another user to &quot;super admin&quot; and current user is not &quot;super admin&quot;" name="set-user-global-role throws 403 if attempting to set another user to &quot;super admin&quot; and current user is not &quot;super admin&quot;" time="0.001">
+    </testcase>
+    <testcase classname="set-user-global-role throws 403 if current user is &quot;super admin&quot; and they&apos;re trying to downgrade themselves out of &quot;super admin&quot;" name="set-user-global-role throws 403 if current user is &quot;super admin&quot; and they&apos;re trying to downgrade themselves out of &quot;super admin&quot;" time="0.001">
+    </testcase>
+    <testcase classname="set-user-global-role throws 403 if current user is not &quot;super admin&quot; and they&apos;re trying to downgrade an admin" name="set-user-global-role throws 403 if current user is not &quot;super admin&quot; and they&apos;re trying to downgrade an admin" time="0">
+    </testcase>
+    <testcase classname="set-user-global-role sets user role" name="set-user-global-role sets user role" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="router-accounts-hooks" tests="8" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:16" time="0.32">
+    <testcase classname="router-accounts-hooks requireAuth redirects to /sign-in with the redirect path as query if not signed in" name="router-accounts-hooks requireAuth redirects to /sign-in with the redirect path as query if not signed in" time="0.001">
+    </testcase>
+    <testcase classname="router-accounts-hooks requireAuth continues to route if signed in" name="router-accounts-hooks requireAuth continues to route if signed in" time="0.001">
+    </testcase>
+    <testcase classname="router-accounts-hooks requireAdmin redirects to /sign-in with the redirect path as query if not signed in" name="router-accounts-hooks requireAdmin redirects to /sign-in with the redirect path as query if not signed in" time="0.002">
+    </testcase>
+    <testcase classname="router-accounts-hooks requireAdmin continues to route if user is in &quot;admin&quot; or &quot;super admin&quot; role" name="router-accounts-hooks requireAdmin continues to route if user is in &quot;admin&quot; or &quot;super admin&quot; role" time="0.001">
+    </testcase>
+    <testcase classname="router-accounts-hooks requireAdmin redirects to /home route if user is not in &quot;admin&quot; or &quot;super admin&quot; role" name="router-accounts-hooks requireAdmin redirects to /home route if user is not in &quot;admin&quot; or &quot;super admin&quot; role" time="0.007">
+    </testcase>
+    <testcase classname="router-accounts-hooks requireAdmin redirects to /home route if user role check fails" name="router-accounts-hooks requireAdmin redirects to /home route if user role check fails" time="0.002">
+    </testcase>
+    <testcase classname="router-accounts-hooks requireNoAuth continues to route if not signed in" name="router-accounts-hooks requireNoAuth continues to route if not signed in" time="0.001">
+    </testcase>
+    <testcase classname="router-accounts-hooks requireNoAuth redirects to /home if signed in" name="router-accounts-hooks requireNoAuth redirects to /home if signed in" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="PasswordResetEmailForm" tests="7" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:16" time="0.689">
+    <testcase classname="PasswordResetEmailForm renders without crashing" name="PasswordResetEmailForm renders without crashing" time="0.049">
+    </testcase>
+    <testcase classname="PasswordResetEmailForm submit button disables submit if one password empty" name="PasswordResetEmailForm submit button disables submit if one password empty" time="0.044">
+    </testcase>
+    <testcase classname="PasswordResetEmailForm submit button disables submit if both passwords filled but don&apos;t match" name="PasswordResetEmailForm submit button disables submit if both passwords filled but don&apos;t match" time="0.065">
+    </testcase>
+    <testcase classname="PasswordResetEmailForm submit button disables submit if both passwords filled and match but not strong enough" name="PasswordResetEmailForm submit button disables submit if both passwords filled and match but not strong enough" time="0.049">
+    </testcase>
+    <testcase classname="PasswordResetEmailForm submit button enables submit if both passwords filled, match, and are strong enough" name="PasswordResetEmailForm submit button enables submit if both passwords filled, match, and are strong enough" time="0.043">
+    </testcase>
+    <testcase classname="PasswordResetEmailForm submit action calls actions.accounts.passwordReset when submitted" name="PasswordResetEmailForm submit action calls actions.accounts.passwordReset when submitted" time="0.038">
+    </testcase>
+    <testcase classname="PasswordResetEmailForm clears password reset error when destroyed" name="PasswordResetEmailForm clears password reset error when destroyed" time="0.018">
+    </testcase>
+  </testsuite>
+  <testsuite name="SignUpForm" tests="6" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:16" time="0.631">
+    <testcase classname="SignUpForm renders without crashing" name="SignUpForm renders without crashing" time="0.045">
+    </testcase>
+    <testcase classname="SignUpForm submit btn disables submit if all inputs are empty" name="SignUpForm submit btn disables submit if all inputs are empty" time="0.045">
+    </testcase>
+    <testcase classname="SignUpForm submit btn disables submit if one input is empty" name="SignUpForm submit btn disables submit if one input is empty" time="0.077">
+    </testcase>
+    <testcase classname="SignUpForm submit btn enables submit if all inputs are filled" name="SignUpForm submit btn enables submit if all inputs are filled" time="0.043">
+    </testcase>
+    <testcase classname="SignUpForm calls actions.accounts.registerUser when submitted, and display success message " name="SignUpForm calls actions.accounts.registerUser when submitted, and display success message " time="0.056">
+    </testcase>
+    <testcase classname="SignUpForm calls actions.accounts.clearRegisterFailure() when destroyed" name="SignUpForm calls actions.accounts.clearRegisterFailure() when destroyed" time="0.033">
+    </testcase>
+  </testsuite>
+  <testsuite name="Counter" tests="7" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:13" time="4.414">
+    <testcase classname="Counter renders without crashing" name="Counter renders without crashing" time="0.063">
+    </testcase>
+    <testcase classname="Counter renders with count 1 initially" name="Counter renders with count 1 initially" time="0.054">
+    </testcase>
+    <testcase classname="Counter increase adds to count when Increment is clicked" name="Counter increase adds to count when Increment is clicked" time="0.127">
+    </testcase>
+    <testcase classname="Counter decrease subtracts from count when Decrease is clicked" name="Counter decrease subtracts from count when Decrease is clicked" time="0.114">
+    </testcase>
+    <testcase classname="Counter count plus ten displays count + 10 when increaseed" name="Counter count plus ten displays count + 10 when increaseed" time="0.131">
+    </testcase>
+    <testcase classname="Counter count plus ten displays count + 10 when decreaseed" name="Counter count plus ten displays count + 10 when decreaseed" time="0.178">
+    </testcase>
+    <testcase classname="Counter reset delayed resets count back to 0 after a 1500ms delay" name="Counter reset delayed resets count back to 0 after a 1500ms delay" time="1.64">
+    </testcase>
+  </testsuite>
+  <testsuite name="accounts-validation" tests="6" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:17" time="0.302">
+    <testcase classname="accounts-validation sets validateNewUser and validateLoginAttempt" name="accounts-validation sets validateNewUser and validateLoginAttempt" time="0.002">
+    </testcase>
+    <testcase classname="accounts-validation validateNewUser throws error to rejects new user if it doesn&apos;t pass userSchema validation" name="accounts-validation validateNewUser throws error to rejects new user if it doesn&apos;t pass userSchema validation" time="0.001">
+    </testcase>
+    <testcase classname="accounts-validation validateNewUser returns true to accept new user if it passes userSchema validation" name="accounts-validation validateNewUser returns true to accept new user if it passes userSchema validation" time="0.001">
+    </testcase>
+    <testcase classname="accounts-validation validateLoginAttempt returns false to invalidate login if login attempted failed (allowed = false)" name="accounts-validation validateLoginAttempt returns false to invalidate login if login attempted failed (allowed = false)" time="0">
+    </testcase>
+    <testcase classname="accounts-validation validateLoginAttempt returns true to validate login if user has verified their email" name="accounts-validation validateLoginAttempt returns true to validate login if user has verified their email" time="0.001">
+    </testcase>
+    <testcase classname="accounts-validation validateLoginAttempt returns true to validate login if user has verified their email" name="accounts-validation validateLoginAttempt returns true to validate login if user has verified their email" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="SignInForm" tests="7" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:17" time="1.021">
+    <testcase classname="SignInForm renders without crashing" name="SignInForm renders without crashing" time="0.126">
+    </testcase>
+    <testcase classname="SignInForm submit btn disables submit if username empty and password empty" name="SignInForm submit btn disables submit if username empty and password empty" time="0.128">
+    </testcase>
+    <testcase classname="SignInForm submit btn disables submit if username empty and password filled" name="SignInForm submit btn disables submit if username empty and password filled" time="0.115">
+    </testcase>
+    <testcase classname="SignInForm submit btn disables submit if username filled and password empty" name="SignInForm submit btn disables submit if username filled and password empty" time="0.071">
+    </testcase>
+    <testcase classname="SignInForm submit btn enables submit if username filled and password filled" name="SignInForm submit btn enables submit if username filled and password filled" time="0.096">
+    </testcase>
+    <testcase classname="SignInForm calls actions.accounts.clearLoginFailure() when destroyed" name="SignInForm calls actions.accounts.clearLoginFailure() when destroyed" time="0.048">
+    </testcase>
+    <testcase classname="SignInForm calls actions.accounts.loginUser() when submitted" name="SignInForm calls actions.accounts.loginUser() when submitted" time="0.056">
+    </testcase>
+  </testsuite>
+  <testsuite name="get-users-with-roles" tests="4" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:18" time="0.212">
+    <testcase classname="get-users-with-roles throws an error if user is not in &quot;super admin&quot; or &quot;admin&quot; role, on client and server" name="get-users-with-roles throws an error if user is not in &quot;super admin&quot; or &quot;admin&quot; role, on client and server" time="0.003">
+    </testcase>
+    <testcase classname="get-users-with-roles does nothing if on server" name="get-users-with-roles does nothing if on server" time="0.001">
+    </testcase>
+    <testcase classname="get-users-with-roles returns Meteor.users.find() with startIndex default 0, limit default 14" name="get-users-with-roles returns Meteor.users.find() with startIndex default 0, limit default 14" time="0.002">
+    </testcase>
+    <testcase classname="get-users-with-roles returns Meteor.users.find() with startIndex and limit provided in args" name="get-users-with-roles returns Meteor.users.find() with startIndex and limit provided in args" time="0.02">
+    </testcase>
+  </testsuite>
+  <testsuite name="AccountsAdminUsersList" tests="5" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:17" time="1.228">
+    <testcase classname="AccountsAdminUsersList renders without crashing" name="AccountsAdminUsersList renders without crashing" time="0.14">
+    </testcase>
+    <testcase classname="AccountsAdminUsersList shows loading if data not loaded yet and still loading" name="AccountsAdminUsersList shows loading if data not loaded yet and still loading" time="0.015">
+    </testcase>
+    <testcase classname="AccountsAdminUsersList shows table if data loaded" name="AccountsAdminUsersList shows table if data loaded" time="0.078">
+    </testcase>
+    <testcase classname="AccountsAdminUsersList adds &quot;current-user&quot; class to Meteor.user() row" name="AccountsAdminUsersList adds &quot;current-user&quot; class to Meteor.user() row" time="0.234">
+    </testcase>
+    <testcase classname="AccountsAdminUsersList set user role calls setUserGlobalRole when an item is clicked" name="AccountsAdminUsersList set user role calls setUserGlobalRole when an item is clicked" time="0.184">
+    </testcase>
+  </testsuite>
+  <testsuite name="enroll-account-email" tests="3" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:18" time="0.088">
+    <testcase classname="enroll-account-email sets email template &quot;from&quot; to Meteor.settings.public.accounts.email.fromAddress" name="enroll-account-email sets email template &quot;from&quot; to Meteor.settings.public.accounts.email.fromAddress" time="0.002">
+    </testcase>
+    <testcase classname="enroll-account-email sets email template &quot;subject&quot; using Meteor.settings.public.accounts.siteName" name="enroll-account-email sets email template &quot;subject&quot; using Meteor.settings.public.accounts.siteName" time="0">
+    </testcase>
+    <testcase classname="enroll-account-email sets email body which contains users name" name="enroll-account-email sets email body which contains users name" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="router" tests="7" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:18" time="0.509">
+    <testcase classname="router adds /sign-up route" name="router adds /sign-up route" time="0.006">
+    </testcase>
+    <testcase classname="router adds /enroll-account route" name="router adds /enroll-account route" time="0.003">
+    </testcase>
+    <testcase classname="router adds /sign-in route" name="router adds /sign-in route" time="0.004">
+    </testcase>
+    <testcase classname="router adds /reset-password route" name="router adds /reset-password route" time="0.002">
+    </testcase>
+    <testcase classname="router adds /home route" name="router adds /home route" time="0.004">
+    </testcase>
+    <testcase classname="router adds / route as /home" name="router adds / route as /home" time="0.005">
+    </testcase>
+    <testcase classname="router adds /private route" name="router adds /private route" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="password-reset-email" tests="3" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:19" time="0.099">
+    <testcase classname="password-reset-email sets email template &quot;from&quot; to Meteor.settings.public.accounts.email.fromAddress" name="password-reset-email sets email template &quot;from&quot; to Meteor.settings.public.accounts.email.fromAddress" time="0.004">
+    </testcase>
+    <testcase classname="password-reset-email sets email template &quot;subject&quot; using Meteor.settings.public.accounts.siteName" name="password-reset-email sets email template &quot;subject&quot; using Meteor.settings.public.accounts.siteName" time="0.001">
+    </testcase>
+    <testcase classname="password-reset-email sets email body which contains users name" name="password-reset-email sets email body which contains users name" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="check-user-global-role" tests="4" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:19" time="0.117">
+    <testcase classname="check-user-global-role does nothing if not run on server" name="check-user-global-role does nothing if not run on server" time="0.001">
+    </testcase>
+    <testcase classname="check-user-global-role returns false if user not signed in" name="check-user-global-role returns false if user not signed in" time="0.001">
+    </testcase>
+    <testcase classname="check-user-global-role returns true if user is in role" name="check-user-global-role returns true if user is in role" time="0">
+    </testcase>
+    <testcase classname="check-user-global-role returns true if user is in role" name="check-user-global-role returns true if user is in role" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="NavBarAccounts" tests="3" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:19" time="0.214">
+    <testcase classname="NavBarAccounts renders without crashing" name="NavBarAccounts renders without crashing" time="0.022">
+    </testcase>
+    <testcase classname="NavBarAccounts displays sign in button when not signed in" name="NavBarAccounts displays sign in button when not signed in" time="0.01">
+    </testcase>
+    <testcase classname="NavBarAccounts displays sign out button when signed in" name="NavBarAccounts displays sign out button when signed in" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="create-unverified-user" tests="2" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:19" time="0.082">
+    <testcase classname="create-unverified-user does nothing if not run on server" name="create-unverified-user does nothing if not run on server" time="0.002">
+    </testcase>
+    <testcase classname="create-unverified-user validation requires a real email, and string firstName and lastName" name="create-unverified-user validation requires a real email, and string firstName and lastName" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Layout" tests="3" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:19" time="0.285">
+    <testcase classname="Layout renders without crashing" name="Layout renders without crashing" time="0.033">
+    </testcase>
+    <testcase classname="Layout shows mobile layout when media matches" name="Layout shows mobile layout when media matches" time="0.029">
+    </testcase>
+    <testcase classname="Layout shows large layout when media matches" name="Layout shows large layout when media matches" time="0.056">
+    </testcase>
+  </testsuite>
+  <testsuite name="client-index" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:19" time="0.141">
+    <testcase classname="client-index creates store and router" name="client-index creates store and router" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="SignOutBtn" tests="2" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:19" time="0.167">
+    <testcase classname="SignOutBtn renders without crashing" name="SignOutBtn renders without crashing" time="0.007">
+    </testcase>
+    <testcase classname="SignOutBtn calls actions.accounts.logoutUser when clicked" name="SignOutBtn calls actions.accounts.logoutUser when clicked" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="SignUpBtn" tests="2" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:19" time="0.174">
+    <testcase classname="SignUpBtn renders without crashing" name="SignUpBtn renders without crashing" time="0.012">
+    </testcase>
+    <testcase classname="SignUpBtn pushes router to sign-up route when clicked" name="SignUpBtn pushes router to sign-up route when clicked" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="SignInBtn" tests="2" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:19" time="0.149">
+    <testcase classname="SignInBtn renders without crashing" name="SignInBtn renders without crashing" time="0.009">
+    </testcase>
+    <testcase classname="SignInBtn pushes router to sign-up route when clicked" name="SignInBtn pushes router to sign-up route when clicked" time="0.007">
+    </testcase>
+  </testsuite>
+  <testsuite name="layout-store" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:20" time="0.037">
+    <testcase classname="layout-store initial state mobile nav is visisble expanded" name="layout-store initial state mobile nav is visisble expanded" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="counter-store" tests="2" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:20" time="0.058">
+    <testcase classname="counter-store initial state contains a count of 1" name="counter-store initial state contains a count of 1" time="0.001">
+    </testcase>
+    <testcase classname="counter-store getters countPlusTen returns state.count + 10" name="counter-store getters countPlusTen returns state.count + 10" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="counter-actions-mutations" tests="6" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:18" time="1.67">
+    <testcase classname="counter-actions-mutations actions increase commits INCREMENT with amount payload" name="counter-actions-mutations actions increase commits INCREMENT with amount payload" time="0.003">
+    </testcase>
+    <testcase classname="counter-actions-mutations actions decrease commits DECREMENT with amount payload" name="counter-actions-mutations actions decrease commits DECREMENT with amount payload" time="0.001">
+    </testcase>
+    <testcase classname="counter-actions-mutations actions resetDelayed commits RESET when complete" name="counter-actions-mutations actions resetDelayed commits RESET when complete" time="1.502">
+    </testcase>
+    <testcase classname="counter-actions-mutations mutations INCREMENT adds amount to state.count" name="counter-actions-mutations mutations INCREMENT adds amount to state.count" time="0">
+    </testcase>
+    <testcase classname="counter-actions-mutations mutations DECREMENT subtracts amount from state.count" name="counter-actions-mutations mutations DECREMENT subtracts amount from state.count" time="0.001">
+    </testcase>
+    <testcase classname="counter-actions-mutations mutations RESET sets state.count to 0" name="counter-actions-mutations mutations RESET sets state.count to 0" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="PageEnrollAccount" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:20" time="0.316">
+    <testcase classname="PageEnrollAccount renders without crashing" name="PageEnrollAccount renders without crashing" time="0.077">
+    </testcase>
+  </testsuite>
+  <testsuite name="PagePasswordReset" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:20" time="0.321">
+    <testcase classname="PagePasswordReset renders without crashing" name="PagePasswordReset renders without crashing" time="0.066">
+    </testcase>
+  </testsuite>
+  <testsuite name="PageSignUp" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:20" time="0.329">
+    <testcase classname="PageSignUp renders without crashing" name="PageSignUp renders without crashing" time="0.112">
+    </testcase>
+  </testsuite>
+  <testsuite name="AccountsFormContainer" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:20" time="0.279">
+    <testcase classname="AccountsFormContainer renders without crashing" name="AccountsFormContainer renders without crashing" time="0.016">
+    </testcase>
+  </testsuite>
+  <testsuite name="AccountsAdminInvites" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:20" time="0.258">
+    <testcase classname="AccountsAdminInvites renders without crashing" name="AccountsAdminInvites renders without crashing" time="0.014">
+    </testcase>
+  </testsuite>
+  <testsuite name="PageSignIn" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:20" time="0.467">
+    <testcase classname="PageSignIn renders without crashing" name="PageSignIn renders without crashing" time="0.085">
+    </testcase>
+  </testsuite>
+  <testsuite name="PageAccountsAdminInvites" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:21" time="0.126">
+    <testcase classname="PageAccountsAdminInvites renders without crashing" name="PageAccountsAdminInvites renders without crashing" time="0.015">
+    </testcase>
+  </testsuite>
+  <testsuite name="PageAccountsAdmin" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:21" time="0.191">
+    <testcase classname="PageAccountsAdmin renders without crashing" name="PageAccountsAdmin renders without crashing" time="0.022">
+    </testcase>
+  </testsuite>
+  <testsuite name="PageHome" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:21" time="0.333">
+    <testcase classname="PageHome renders without crashing" name="PageHome renders without crashing" time="0.107">
+    </testcase>
+  </testsuite>
+  <testsuite name="PagePrivate" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:21" time="0.144">
+    <testcase classname="PagePrivate renders without crashing" name="PagePrivate renders without crashing" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="PageBase" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-12-18T14:54:21" time="0.09">
+    <testcase classname="PageBase renders without crashing" name="PageBase renders without crashing" time="0.002">
+    </testcase>
+  </testsuite>
+</testsuites>

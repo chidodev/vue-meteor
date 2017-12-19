@@ -26,6 +26,7 @@ export const setupVue = () => {
   const supplyCache = {}; // need an empty cache to help vue-supply stores data in vuex
   const suppliedStoreOptions = injectSupply(storeOptions, supplyCache);
   const store = new Vuex.Store(suppliedStoreOptions);
+  // const store = new Vuex.Store(storeOptions);
 
   const router = createRouter();
   sync(store, router);

@@ -25,7 +25,6 @@ module.exports = {
   'moduleNameMapper': {
     '^meteor/(.*)': '<rootDir>/tests/unit-test-setup/meteor-mocks/$1.js',
     '^[/](.*)': '<rootDir>/$1',
-    "^vue$": "vue/dist/vue.common.js",
     "\\.(css|scss)$": "<rootDir>/tests/style/styleMock.js"
   },
   'coverageThreshold': {

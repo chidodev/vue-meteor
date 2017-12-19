@@ -12,6 +12,15 @@ const PageHomeAsync = (resolve) => {
     .then((PageHome) => resolve(getModule(PageHome)));
 }
 
+const PageLoginAsync = (resolve) => {
+  import('/imports/ui/pages/login/login.vue')
+    .then((PageLogin) => resolve(getModule(PageLogin)));
+}
+
+const PageSignUpAsync = (resolve) => {
+  import('/imports/ui/pages/sign-up/sign-up.vue')
+    .then((PageSIgnUp) => resolve(getModule(PageSIgnUp)));
+}
 const routes = [
   {
     path: '/',
@@ -21,6 +30,16 @@ const routes = [
     path: '/home',
     name: 'home',
     component: PageHomeAsync,
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: PageLoginAsync,
+  },
+  {
+    path: '/sign-up',
+    name: 'sign-up',
+    component: PageSignUpAsync,
   }
 ];
 

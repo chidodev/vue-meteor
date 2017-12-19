@@ -1,5 +1,5 @@
 class MeteorError {
-  constructor (arg1, arg2) {
+  constructor(arg1, arg2) {
     if (typeof arg2 === 'undefined') {
       this.message = arg1;
     } else {
@@ -26,8 +26,9 @@ export const Meteor = {
     };
   },
   users: {
-    deny: () => {}
+    deny: () => { }
   },
   loggingIn: () => false,
+  autorun: jest.fn(),
   Error: MeteorError  // set as generic error class
 };

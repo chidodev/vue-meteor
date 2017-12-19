@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for imports/modules/layout/client/state/layout-actions-mutations.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">All files</a> / <a href="index.html">imports/modules/layout/client/state</a> layout-actions-mutations.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>19/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/19</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Meteor } from 'meteor/meteor';
+import { Roles } from 'meteor/alanning:roles';
+import { globalUserRoles } from '/src/imports/modules/accounts/shared/constants/global-user-roles';
+&nbsp;
+const MUTATION_TYPES = {
+  SHOW_MOBILE_NAV: 'SHOW_MOBILE_NAV',
+  SHOW_LARGE_NAV: 'SHOW_LARGE_NAV',
+  TOGGLE_MOBILE_NAV_EXPANDED: 'TOGGLE_MOBILE_NAV_EXPANDED',
+  SET_LAYOUT_THEME_LIGHT: 'SET_LAYOUT_THEME_LIGHT',
+  SET_LAYOUT_THEME_DARK: 'SET_LAYOUT_THEME_DARK',
+  UPDATE_NAV_ROUTES: 'UPDATE_NAV_ROUTES'
+};
+&nbsp;
+// nav routes for "user" role
+const navRoutesUser = [
+  {
+    name: 'home',
+    displayName: 'Home',
+    icon: 'home'
+  },
+  {
+    name: 'private',
+    displayName: 'Private',
+    icon: 'locked'
+  }
+];
+// nav routes for "admin" role
+const navRoutesAdmin = navRoutesUser.concat([
+  {
+    name: 'accounts-admin',
+    displayName: 'Accounts',
+    icon: 'android-people'
+  }
+]);
+&nbsp;
+const actions = {
+  showMobileNav: ({ commit, state }) =&gt; {
+    commit(MUTATION_TYPES.SHOW_MOBILE_NAV);
+  },
+  showLargeNav: ({ commit }) =&gt; {
+    commit(MUTATION_TYPES.SHOW_LARGE_NAV);
+  },
+  toggleMobileNavExpanded: ({ commit }) =&gt; {
+    commit(MUTATION_TYPES.TOGGLE_MOBILE_NAV_EXPANDED);
+  },
+  setLayoutThemeLight: ({ commit }) =&gt; {
+    commit(MUTATION_TYPES.SET_LAYOUT_THEME_LIGHT);
+  },
+  setLayoutThemeDark: ({ commit }) =&gt; {
+    commit(MUTATION_TYPES.SET_LAYOUT_THEME_DARK);
+  },
+  updateNavRoutes: ({ commit }) =&gt; {
+    commit(MUTATION_TYPES.UPDATE_NAV_ROUTES);
+  }
+};
+&nbsp;
+const mutations = {
+  [MUTATION_TYPES.SHOW_MOBILE_NAV]: (state) =&gt; {
+    state.isMobileNavVisible = true;
+  },
+  [MUTATION_TYPES.SHOW_LARGE_NAV]: (state) =&gt; {
+    state.isMobileNavVisible = false;
+  },
+  [MUTATION_TYPES.TOGGLE_MOBILE_NAV_EXPANDED]: (state) =&gt; {
+    state.isMobileNavExpanded = !state.isMobileNavExpanded;
+  },
+  [MUTATION_TYPES.SET_LAYOUT_THEME_LIGHT]: (state) =&gt; {
+    state.layoutTheme = 'light';
+  },
+  [MUTATION_TYPES.SET_LAYOUT_THEME_DARK]: (state) =&gt; {
+    state.layoutTheme = 'dark';
+  },
+  [MUTATION_TYPES.UPDATE_NAV_ROUTES]: (state) =&gt; {
+    if (Roles.userIsInRole(Meteor.userId(), [globalUserRoles.SUPER_ADMIN, globalUserRoles.ADMIN], Roles.GLOBAL_GROUP)) {
+      state.navRoutes = navRoutesAdmin;
+    } else {
+      state.navRoutes = navRoutesUser;
+    }
+  }
+};
+&nbsp;
+export {
+  actions,
+  mutations,
+  MUTATION_TYPES,
+  navRoutesUser,
+  navRoutesAdmin
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Dec 19 2017 01:54:23 GMT+1100 (AEDT)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>
