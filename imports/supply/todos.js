@@ -17,6 +17,7 @@ export default {
     },
 
     allTodos() {
+      console.log('alltodos: ', Todos.find({}, { sort: { createAt: -1 } }).fetch())
       return Todos.find({}, { sort: { createAt: -1 } });
     },
   },

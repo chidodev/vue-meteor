@@ -3,6 +3,7 @@ import VueMeteorTracker from 'vue-meteor-tracker';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
+import { VuexAltPlugin } from 'vuex-alt';
 import { sync } from 'vuex-router-sync';
 import { injectSupply } from 'vue-supply';
 import VueFormGenerator from 'vue-form-generator';
@@ -32,6 +33,9 @@ export const setupVue = () => {
 
   const router = createRouter();
   sync(store, router);
+
+  // Use vuex-alt for mapGetters and mapActions
+  Vue.use(VuexAltPlugin, { store });
 
   return { supplyCache, store, router };
 };

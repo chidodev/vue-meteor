@@ -12,26 +12,26 @@ b-col.offset-md-3(col md="6")
 
 <script>
 import VueFormGenerator from 'vue-form-generator';
-import { mapActions } from 'vuex';
+import { mapActions } from 'vuex-alt';
 
 export default {
   name: "login",
   data() {
     return {
       model: {
-        email: '',
+        username: '',
         password: '',
       },
 
       schema: {
         fields: [{
           type: 'input',
-          model: 'email',
+          model: 'username',
           inputType: 'text',
-          label: 'Your email',
+          label: 'Your username',
           styleClasses: 'col-sm-12',
           required: true,
-          validator: VueFormGenerator.validators.email,
+          validator: VueFormGenerator.validators.string,
         }, {
           type: 'input',
           model: 'password',
@@ -55,15 +55,16 @@ export default {
     async submitForm() {
       try {
         const response = await this.loginUser({
-          email: this.model.email,
+          username: this.model.username,
           password: this.model.password,
         });
 
-        if (response) {
-          this.$toasted.show('Hola!');
-        }
+        // if (response) {
+        //   this.$toasted.show('Hola!');
+        // }
       } catch (e) {
-        this.$toasted.show(e);
+        console.log('error occured: ', e)
+        //this.$toasted.show(e);
       }
     },
   },
