@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import { sync } from 'vuex-router-sync';
 import { injectSupply } from 'vue-supply';
+import VueFormGenerator from 'vue-form-generator';
 
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -20,6 +21,7 @@ import '/imports/supply';
 export const setupVue = () => {
   Vue.use(VueMeteorTracker);
   Vue.use(BootstrapVue);
+  Vue.use(VueFormGenerator);
   Vue.use(Vuex);
   Vue.use(VueRouter);
   // vue-supply and vuex setup

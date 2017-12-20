@@ -17,6 +17,7 @@
     "vue-meteor-tracker": "^1.2.3",
     "vue-router": "^2.8.1",
     "vue-supply": "^0.3.0",
+    "vue-form-generator": "^2.1.1",
     "vuex": "^2.3.1",
     "vuex-router-sync": "^4.1.2"
   },
