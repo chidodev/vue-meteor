@@ -1,12 +1,13 @@
 <template lang="pug">
-b-form
-  vue-form-generator(:model="model"
-                    :schema="schema"
-                    :options="formOptions")
-  .buttons-w
-    b-button(variant="primary"
-            @click="submitForm()") Log me in
-    b-link.m-l-10(to="recover-password") Forgot your password?
+b-col.offset-md-3(col md="6")
+  b-card
+    b-form
+      vue-form-generator(:model="model"
+                        :schema="schema"
+                        :options="formOptions")
+      b-button(variant="primary"
+              @click="submitForm()") Login
+      b-link(to="recover-password") Forgot your password?
 </template>
 
 <script>

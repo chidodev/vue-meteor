@@ -25,7 +25,6 @@ export default {
 
 <style scoped>
 .container {
-  margin-top: 30px;
   height: 80%;
 }
 footer {

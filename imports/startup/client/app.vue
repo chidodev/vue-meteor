@@ -1,7 +1,7 @@
 <template lang="pug">
 body
   sheader
-  router-view
+  router-view.container
   sfooter
 </template>
 
@@ -20,8 +20,7 @@ export default {
 
 <style scoped>
 .container {
-  margin-top: 30px;
-  height: 80%;
+  margin-top: 50px;
 }
 footer {
   width: 100%;
