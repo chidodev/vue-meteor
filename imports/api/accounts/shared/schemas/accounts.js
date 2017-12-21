@@ -1,10 +1,11 @@
 import SimpleSchema from 'simpl-schema';
+
 const nameSchema = new SimpleSchema({
-  firstName: {
+  first: {
     type: String,
     required: true,
   },
-  lastName: {
+  last: {
     type: String,
     required: true,
   },

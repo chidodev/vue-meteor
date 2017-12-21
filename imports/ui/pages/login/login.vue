@@ -58,13 +58,11 @@ export default {
           username: this.model.username,
           password: this.model.password,
         });
-
-        // if (response) {
-        //   this.$toasted.show('Hola!');
-        // }
+        if (response) {
+          this.$router.push('/');
+        }
       } catch (e) {
         console.log('error occured: ', e)
-        //this.$toasted.show(e);
       }
     },
   },
