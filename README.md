@@ -30,4 +30,4 @@
 - [vuex](https://vuex.vuejs.org/en/state.html)
 - [meteor-collection2](https://github.com/aldeed/meteor-collection2)
 
-made with &#x2764; by [Steven](https://github.com/iamstevendao).
+
